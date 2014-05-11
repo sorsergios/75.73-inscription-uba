@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: lightblue;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    background-color: #4A93FF;
+    border-bottom: 2px solid #0000FF;
+    border-top: 2px solid #0000FF;
+    padding: 1px;
+}
+
+header nav {
+    border-top: 2px solid #0000FF;
+}
+
+header nav a {
+    display: inline;
+    padding: 5px 30px;
+}
+
+a {
+    decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    decoration: underline;
+}
+
+div.centered-content {
+    max-width: 900px;
+    text-align: left;
+}
+
+footer .centered-content {
+    margin: 10px auto 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

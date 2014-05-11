@@ -1,0 +1,19 @@
+[
+	{"id": 61, "description": "MATEMÁTICA"},
+	{"id": 62, "description": "FISICA"},
+	{"id": 63, "description": "QUIMICA"},
+	{"id": 64, "description": "ESTABILIDAD"},
+	{"id": 65, "description": "ELECTROTECNIA"},
+	{"id": 66, "description": "ELECTRONICA"},
+	{"id": 67, "description": "INGENIERIA MECANICA"},
+	{"id": 68, "description": "TRANSPORTE"},
+	{"id": 69, "description": "HIDRAULICA"},
+	{"id": 70, "description": "AGRIMENSURA"},
+	{"id": 72, "description": "TECNOLOGIA INDUSTRIAL"},
+	{"id": 73, "description": "INGENIERIA NAVAL"},
+	{"id": 74, "description": "CONSTRUCCIONES Y ESTRUCTURAS"},
+	{"id": 75, "description": "COMPUTACION"},
+	{"id": 76, "description": "INGENIERIA QUIMICA"},
+	{"id": 77, "description": "SEGURIDAD DEL TRABAJO Y AMBIENTE"},
+	{"id": 78, "description": "IDIOMA"}
+]
