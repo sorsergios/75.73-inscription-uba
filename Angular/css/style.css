@@ -9,18 +9,23 @@ body {
 
 header {
     background-color: #4A93FF;
-    border-bottom: 2px solid #0000FF;
-    border-top: 2px solid #0000FF;
+    border-bottom: 1px solid #0000FF;
+    color: #0000FF;
     padding: 1px;
 }
 
 header nav {
-    border-top: 2px solid #0000FF;
+    border-top: 2px double #0000FF;
 }
 
 header nav a {
-    display: inline;
+    display: inline-block;
     padding: 5px 30px;
+}
+header nav a.active,
+header nav a:hover {
+    color: #FFFFFF;
+    background-color: #0000FF;
 }
 
 a {
@@ -39,11 +44,27 @@ div.centered-content {
 }
 
 footer .centered-content {
-    margin: 10px auto 20px;
+    margin: 10px auto;
 }
 
 footer {
+    background-color: #4A93FF;
     position: fixed;
     bottom: 0;
     width: 100%;
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
 }
