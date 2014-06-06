@@ -41,6 +41,7 @@ a:hover {
 div.centered-content {
     max-width: 900px;
     text-align: left;
+    margin: 0 auto 70px;
 }
 
 footer .centered-content {
@@ -67,4 +68,8 @@ footer {
 
 .clear {
     clear: both;
+}
+.columns {
+    display: inline-table;
+    width: 33%;
 }
