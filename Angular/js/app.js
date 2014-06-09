@@ -12,4 +12,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
         $scope.subjects = data;
     });
     
+    $scope.completed = function() {
+        return true;
+    };
 });
