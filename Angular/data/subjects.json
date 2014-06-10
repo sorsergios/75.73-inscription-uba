@@ -25,14 +25,17 @@
 	}, {
 		"type": "Orientación", 
 		"content": [{
+				"id": 1, 
 				"description": "Gestión Industrial de Sistemas", 
 				"completed": true, 
 				"assignatures": ["7113", "7544", "7545", "7546", "7547", "7548"]
 			}, {
+				"id": 2, 
 				"description": "Sistemas Distribuidos", 
 				"completed": true, 
 				"assignatures": ["6606", "6674", "7559", "7574", "7561"]
 			}, {
+				"id": 3, 
 				"description": "Sistemas de Producción", 
 				"completed": true, 
 				"assignatures": ["6405", "7201", "7565", "7566", "7567", "7568"]

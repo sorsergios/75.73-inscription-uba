@@ -23,7 +23,7 @@ nav {
     border-right: 1px solid #0000FF;
     text-align: left;
     white-space: nowrap;
-    width: auto;
+    width: 190px;
 }
 
 nav a {
@@ -47,6 +47,10 @@ a:hover {
     decoration: underline;
 }
 .content {
+    display: table;
+    width: 100%;
+}
+.content-row {
     display: table-row;
 }
 
@@ -101,8 +105,10 @@ dt {
     text-align: center;
 }
 dd {
-    margin: 5px;
+    border-top: 1px solid gray;
     font-size: 80%;
+    margin: 0;
+    padding: 5px;
 }
 .incomplete {
     background-color: #CF2323;

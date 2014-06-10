@@ -16,21 +16,23 @@
         <h1>Sistema de Inscripciones</h1>
     </header>
     <div class="content">
-        <nav class="column">
-            <a>INICIO</a>
-            <a>CURSOS</a>
-            <a>MIS INSCRIPCIONES</a>
-            <a>SALIR</a>
-        </nav>
-        <div class="column inner-content">
-            <div ng-repeat="subject in subjects" class="columns">
-                <h4>{{subject.type}}</h4>
-                <dl ng-repeat="group in subject.content">
-                    <dt>{{group.description}}</dt>
-                    <dd ng-repeat="assignature in group.assignatures" ng-class="{'complete': completed()}">
-                            {{assignature | getAssignature:this}}
-                    </dd>
-                </dl>
+        <div class="content-row">
+            <nav class="column">
+                <a>INICIO</a>
+                <a>CURSOS</a>
+                <a>MIS INSCRIPCIONES</a>
+                <a>SALIR</a>
+            </nav>
+            <div class="column inner-content">
+                <div ng-repeat="subject in subjects" class="columns">
+                    <h4>{{subject.type}}</h4>
+                    <dl ng-repeat="group in subject.content">
+                        <dt>{{group.description}}</dt>
+                        <dd ng-repeat="assignature in group.assignatures" ng-class="{0: 'complete', 1: 'incomplete', 2: 'invalid'}[completed(assignature)]">
+                                {{assignature | getAssignature:this}}
+                        </dd>
+                    </dl>
+                </div>
             </div>
         </div>
     </div>
