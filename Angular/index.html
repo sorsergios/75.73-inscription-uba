@@ -11,10 +11,25 @@
     
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
-<body ng-controller="SystemCtrl">
+<body ng-controller="SystemCtrl" ng-class="{'noScroll': activeModal}">
     <header>
         <h1>Sistema de Inscripciones</h1>
     </header>
+    <div class="overlay" ng-show="activeModal">
+        <div class="coursesModal">
+            <a class="close" href="#" ng-click="toggleModal()">x</a>
+            <h3>{{selectedCourse.code}} - {{selectedCourse.data.nombre}}</h3>
+            <div>
+                <div ng-repeat="courses in selectedCourse.data.cursos" class="">
+                    {{courses.curso}} - {{courses.vacantes}}
+                    {{courses.profesor}}
+                    <ul>
+                        <li ng-repeat="times in courses.horarios" >{{times}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="content">
         <div class="content-row">
             <nav class="column">
@@ -28,7 +43,9 @@
                     <h4>{{subject.type}}</h4>
                     <dl ng-repeat="group in subject.content">
                         <dt>{{group.description}}</dt>
-                        <dd ng-repeat="assignature in group.assignatures" ng-class="{0: 'complete', 1: 'incomplete', 2: 'invalid'}[completed(assignature)]">
+                        <dd ng-repeat="assignature in group.assignatures" 
+                            ng-class="{0: 'complete', 1: 'incomplete', 2: 'invalid'}[completed(assignature)]"
+                            ng-click="toggleModal(assignature)">
                                 {{assignature | getAssignature:this}}
                         </dd>
                     </dl>
