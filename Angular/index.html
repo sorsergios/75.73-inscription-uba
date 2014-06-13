@@ -19,11 +19,18 @@
         <div class="coursesModal">
             <a class="close" href="#" ng-click="toggleModal()">x</a>
             <h3>{{selectedCourse.code}} - {{selectedCourse.data.nombre}}</h3>
-            <div>
-                <div ng-repeat="courses in selectedCourse.data.cursos" class="">
-                    {{courses.curso}} - {{courses.vacantes}}
-                    {{courses.profesor}}
-                    <ul>
+            <div class="courses">
+                <div class="row header">
+                    <div class="cell id">CURSOS</div>
+                    <div class="cell vacancy">VACANTES</div>
+                    <div class="cell profesor">PROFESORES</div>
+                    <div class="cell times">HORARIOS</div>
+                </div>
+                <div ng-repeat="courses in selectedCourse.data.cursos" class="row">
+                    <div class="cell id">{{courses.curso}}</div>
+                    <div class="cell vacancy">{{courses.vacantes}}</div>
+                    <div class="cell profesor">{{courses.profesor}}</div>
+                    <ul  class="cell times">
                         <li ng-repeat="times in courses.horarios" >{{times}}</li>
                     </ul>
                 </div>
