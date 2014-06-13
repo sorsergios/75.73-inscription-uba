@@ -10,8 +10,9 @@ body {
 header {
     background: transparent url('../img/logo.jpg') no-repeat scroll 0 0;
     border-bottom: 1px solid #0000FF;
-    color: #0000FF;
+    color: white;
     height: 75px;
+    background-color: darkmagenta;
 }
 header h1 {
     float: left;
@@ -23,6 +24,7 @@ nav {
     border-right: 1px solid #0000FF;
     text-align: left;
     white-space: nowrap;
+    background-color: darkorchid;
     width: 190px;
 }
 
@@ -58,7 +60,7 @@ a:hover {
     display: table-cell;
 }
 .inner-content {
-    background: lightblue;
+    background: white;
     text-align: left;
     margin: 0 auto 70px;
     padding: 0 28px;
@@ -102,7 +104,9 @@ dl {
 dt {
     padding: 5px;
     font-weight: bold;
+    background-color: darkorchid;
     text-align: center;
+    color: white;
 }
 dd {
     border-top: 1px solid gray;
@@ -116,7 +120,8 @@ dd {
 }
 
 .complete {
-    background-color: #14803B;
+    background-color: #009900;
+    color: white;
 }
 .overlay {
     position: fixed;
@@ -131,7 +136,7 @@ dd {
     position: relative;
     width: 900px;
     min-height: 300px;
-    background-color: lightblue;
+    background-color: lightwhite;
     border: 1px solid blue;
     border-radius: 8px;
     margin: 100px auto;
@@ -167,7 +172,7 @@ dd {
 
 .courses .header .cell {
     background: gray;
-    border: 2px solid lightblue;
+    border: 2px solid white;
     padding: 2px 0;
     font-size: 12px;
 }
