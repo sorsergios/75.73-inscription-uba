@@ -9,7 +9,7 @@ body {
 
 header {
     background: transparent url('../img/logo.jpg') no-repeat scroll 0 0;
-    border-bottom: 1px solid #0000FF;
+    border-bottom: 1px solid black;
     color: white;
     height: 75px;
     background-color: darkmagenta;
@@ -26,17 +26,18 @@ nav {
     white-space: nowrap;
     background-color: darkorchid;
     width: 190px;
+    color: white;
 }
 
 nav a {
     display: block;
     padding: 5px 20px;
-    color: #0000FF;
+    color: white;
 }
 nav a.active,
 nav a:hover {
-    color: #FFFFFF;
-    background-color: #0000FF;
+    color: white;
+    background-color: darkmagenta;
 }
 
 a {
@@ -129,24 +130,25 @@ dd {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(228, 255, 255, 0.5);
+    background-color: white;
     overflow: scroll;
 }
+
 .coursesModal {
     position: relative;
     width: 900px;
     min-height: 300px;
-    background-color: lightwhite;
-    border: 1px solid blue;
+    border: 1px solid darkmagenta;
     border-radius: 8px;
     margin: 100px auto;
 }
+
 .coursesModal .close {
     position: absolute;
     top: 0;
     right: 0;
     text-decoration: none;
-    background: blue;
+    background: darkmagenta;
     color: white;
     width: 20px;
     height: 20px;
