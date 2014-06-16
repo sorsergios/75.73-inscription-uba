@@ -504,6 +504,42 @@
 			}], 
 		"correlativas": ""
 	}, 
+	"6118": {
+		"nombre": "ECUACIONES DIFERENCIALES ORDINARIAS ", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["TO martes 09:00 11:00 PC-303", "PO martes 11:00 13:00 PC-303", "TO jueves 09:00 11:00 PC-303", "PO jueves 11:00 13:00 PC-303"], 
+				"profesor": "ACERO-CALZON-FARIÑA-SMILOVICH", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}, {
+				"horarios": ["PO martes 18:00 20:00 PC-310", "TO martes 20:00 22:00 PC-310", "PO jueves 18:00 20:00 PC-310", "TO jueves 20:00 22:00 PC-310"], 
+				"profesor": "HAGMAN-CASTILLO-DEL RIO GARCIA-PEÑ", 
+				"curso": "6", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6103-6108"
+	}, 
+	"6119": {
+		"nombre": "ANÁLISIS FUNCIONAL", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["TO martes 09:00 11:00 PC-303", "PO martes 11:00 13:00 PC-303", "TO jueves 09:00 11:00 PC-303", "PO jueves 11:00 13:00 PC-303"], 
+				"profesor": "ACERO-CALZON-FARIÑA-SMILOVICH", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}, {
+				"horarios": ["PO martes 18:00 20:00 PC-310", "TO martes 20:00 22:00 PC-310", "PO jueves 18:00 20:00 PC-310", "TO jueves 20:00 22:00 PC-310"], 
+				"profesor": "HAGMAN-CASTILLO-DEL RIO GARCIA-PEÑ", 
+				"curso": "6", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6110"
+	}, 
 	"8101": {
 		"nombre": "ANÁLISIS MATEMATICO II", 
 		"creditos": 6, 
@@ -3354,6 +3390,18 @@
 			}], 
 		"correlativas": "6211-6618"
 	}, 
+	"6635": {
+		"nombre": "TÉCNICA DIGITAL AVANZADA", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 23:00 PC-S27"], 
+				"profesor": "ALVAREZ", 
+				"curso": "01", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6107-6617"
+	}, 
 	"6638": {
 		"nombre": "PROCESAMIENTO DE SEÑALES I", 
 		"creditos": 6, 
@@ -3431,6 +3479,18 @@
 				"vacantes": 20
 			}], 
 		"correlativas": "6674"
+	}, 
+	"6647": {
+		"nombre": "PROCESAMIENTO DE IMÁGENES", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 23:00 PC-S27"], 
+				"profesor": "ALVAREZ", 
+				"curso": "01", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6109-6674"
 	}, 
 	"6648": {
 		"nombre": "SEMINARIO DE ELECTRÓNICA", 
@@ -3515,6 +3575,18 @@
 				"vacantes": 20
 			}], 
 		"correlativas": ""
+	}, 
+	"6655": {
+		"nombre": "SIMULACIÓN DE SISTEMAS DE CONTROL", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["TPO martes 09:30 12:30 PC-L1", "TPO miercoles 09:30 12:30 PC-L1"], 
+				"profesor": "GODFRID", 
+				"curso": "01", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6618"
 	}, 
 	"6656": {
 		"nombre": "CONTROL ÓPTIMO", 
@@ -6222,6 +6294,138 @@
 			}], 
 		"correlativas": ""
 	}, 
+	"7141": {
+		"nombre": "ANÁLISIS Y RESOLUCIÓN DE PROBLEMAS", 
+		"creditos": 6, 
+		"cursos": [{		
+				"horarios": ["T martes 18:00 23:00 LH-208", "T jueves 18:00 19:00 LH-103"], 
+				"profesor": "RAMOS, SILVIA ADRIANA - SADRAS, DIEGO ALEJANDRO", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7115"
+	},
+	"7112": {
+		"nombre": "ESTRUCTURA DE LAS ORGANIZACIONES", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "REY", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7506"
+	},
+	"7113": {
+		"nombre": "INFORMACIÓN EN LAS ORGANIZACIONES", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "MARKDOFF", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7112"
+	},
+	"7114": {
+		"nombre": "MODELOS Y OPTIMIZACION I", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "RAMONET - RAMOS", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6110-6203-6301-7542"
+	},
+	"7115": {
+		"nombre": "MODELOS Y OPTIMIZACIÓN II", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "MARKDORF, FERNANDO HUGO - GIOSCIO, CLAUDIA ROXANA - GE, LIXIN - RADICE, LILIANA MARTA", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6109-7114"
+	},
+	"7118": {
+		"nombre": "ESTRUCTURA ECONOMICA ARGENTINA", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "BERISSO, OSVALDO JORGE - BERTOIA DEL VALLE, EZEQUIEL - GARCIA, EDUARDO EZEQUIEL", 
+				"curso": "1", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "CBC"
+	},
+	"7120": {
+		"nombre": "MODELOS Y OPTIMIZACIÓN III", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "RAMOS, SILVIA ADRIANA", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7115"
+	},
+	"7140": {
+		"nombre": "LEG. Y EJ. PROF. DE LA ING. EN INFORMAT.", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "NOREMBERG", 
+				"curso": "1", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "140"
+	},
+	"7142": {
+		"nombre": "CIRCUITOS DE INFORMACIÓN EN LA EMPRESA", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "NOREMBERG", 
+				"curso": "1", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7146"
+	},
+	"7144": {
+		"nombre": "RECURSOS HUMANOS", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "NOREMBERG", 
+				"curso": "1", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "140"
+	},
+	"7146": {
+		"nombre": "INGENIERÍA ECONÓMICA", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "NOREMBERG", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "140"
+	},
 	"9001": {
 		"nombre": "TOPOGRAFIA Y GEODESIA", 
 		"creditos": 6, 
@@ -7086,6 +7290,30 @@
 			}], 
 		"correlativas": ""
 	}, 
+	"7500": {
+		"nombre": "TESIS DE GRADO DE ING. INFORMÁTICA", 
+		"creditos": 24, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "TUTOR", 
+				"curso": "1", 
+				"creditos": 24, 
+				"vacantes": 1
+			}], 
+		"correlativas": "140"
+	},
+	"7599": {
+		"nombre": "TRABAJO PROFESIONAL DE ING. INFORMÁTICA", 
+		"creditos": 12, 
+		"cursos": [{
+				"horarios": ["T martes 08:00 11:00 LH-302", "T jueves 09:00 14:00 LH-302"], 
+				"profesor": "TUTOR", 
+				"curso": "1", 
+				"creditos": 12, 
+				"vacantes": 3
+			}], 
+		"correlativas": "140"
+	},
 	"7501": {
 		"nombre": "COMPUTACION", 
 		"creditos": 6, 
@@ -7362,6 +7590,18 @@
 			}], 
 		"correlativas": "7506-7509"
 	}, 
+	"7516": {
+		"nombre": "LENGUAJES DE PROGRAMACIÓN ", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T miercoles 16:00 19:00 PC-200", "TP miercoles 19:00 22:00 PC-200"], 
+				"profesor": "ALE-DEJEAN-FASCE-FULCO-ROMAN", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7514"
+	}, 
 	"7517": {
 		"nombre": "IMPLANTACION DE SISTEMAS", 
 		"creditos": 6, 
@@ -7458,6 +7698,30 @@
 			}], 
 		"correlativas": ""
 	}, 
+	"7529": {
+		"nombre": "TEORÍA DE ALGORITMOS I", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T miercoles 16:00 19:00 PC-200 P miercoles 19:00 22:00 PC-200"], 
+				"profesor": "ALE-DEJEAN-FASCE-FULCO-ROMAN", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6107-7541"
+	}, 
+	"7530": {
+		"nombre": "TEORÍA DE ALGORITMOS II", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["T miercoles 16:00 19:00 PC-200 P miercoles 19:00 22:00 PC-200"], 
+				"profesor": "ALE-DEJEAN-FASCE-FULCO-ROMAN", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7529"
+	}, 
 	"7531": {
 		"nombre": "TEORIA DE LENGUAJE", 
 		"creditos": 6, 
@@ -7482,6 +7746,18 @@
 			}], 
 		"correlativas": ""
 	}, 
+	"7538": {
+		"nombre": "ANÁLISIS NUMÉRICO II A", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["TO lunes 19:00 21:00 PC-LG DC jueves 17:00 21:00 PC-LE"], 
+				"profesor": "IERACHE", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7552"
+	},
 	"7539": {
 		"nombre": "APLICACIONES INFORMÁTICAS", 
 		"creditos": 6, 
@@ -7656,6 +7932,18 @@
 			}], 
 		"correlativas": "6109-7114"
 	}, 
+	"7551": {
+		"nombre": "TÉCNICAS DE PRODUCCIÓN DE SOFTWARE I ", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 23:00 PC-303 DC jueves 18:30 20:30 PC-LC"], 
+				"profesor": "OCHOA-FERNANDEZ", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7515-7552"
+	}, 
 	"7552": {
 		"nombre": "TALLER DE PROGRAMACIÓN II", 
 		"creditos": 6, 
@@ -7668,6 +7956,30 @@
 			}], 
 		"correlativas": "7114-7507-7542"
 	}, 
+	"7553": {
+		"nombre": "TÉCNICAS DE PRODUCCIÓN DE SOFTWARE II", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 23:00 PC-303 DC jueves 18:30 20:30 PC-LC"], 
+				"profesor": "OCHOA-FERNANDEZ", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7551"
+	}, 
+	"7554": {
+		"nombre": "TÉCNICAS DE PRODUCCIÓN DE SOFTWARE III", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 23:00 PC-303 DC jueves 18:30 20:30 PC-LC"], 
+				"profesor": "OCHOA-FERNANDEZ", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7548-7553"
+	},
 	"7555": {
 		"nombre": "TALLER DE DESARROLLO DE PROYECTOS III", 
 		"creditos": 6, 
@@ -7740,6 +8052,18 @@
 			}], 
 		"correlativas": "6674-7574"
 	}, 
+	"7562": {
+		"nombre": "TÉCNICAS DE PROGRAMACIÓN CONCURRENTE II", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 22:00 PC-LD", "TPO martes 09:30 12:30 PC-LD"], 
+				"profesor": "FELDGEN", 
+				"curso": "1", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7559"
+	}, 
 	"7563": {
 		"nombre": "SISTEMAS DISTRUBUIDOS II", 
 		"creditos": 6, 
@@ -7752,6 +8076,18 @@
 			}], 
 		"correlativas": "7574"
 	}, 
+	"7564": {
+		"nombre": "SISTEMAS MULTIMEDIALES", 
+		"creditos": 4, 
+		"cursos": [{
+				"horarios": ["TPO lunes 19:00 22:00 PC-LD", "TPO martes 09:30 12:30 PC-LD"], 
+				"profesor": "FELDGEN", 
+				"curso": "1", 
+				"creditos": 4, 
+				"vacantes": 20
+			}], 
+		"correlativas": "6674-7574"
+	},
 	"7565": {
 		"nombre": "MANUFACTURA INTEGRADA POR COMP.(CIM) I", 
 		"creditos": 6, 
@@ -7800,6 +8136,18 @@
 			}], 
 		"correlativas": "7565-7567"
 	}, 
+	"7569": {
+		"nombre": "SIST.AUTOM.DE DIAG.Y DETEC.DE FALLAS II", 
+		"creditos": 6, 
+		"cursos": [{
+				"horarios": ["DC lunes 17:00 19:00 PC-402", "TPO lunes 19:00 23:00 PC-402"], 
+				"profesor": "MERLINO", 
+				"curso": "1", 
+				"creditos": 6, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7567"
+	}, 
 	"7570": {
 		"nombre": "SIST.DE PROG. NO CONVENCIONAL DE ROBOTS", 
 		"creditos": 6, 
@@ -7835,6 +8183,30 @@
 				"vacantes": 20
 			}], 
 		"correlativas": "7507"
+	}, 
+	"7572": {
+		"nombre": "SEMINARIO DE ING. INFORMÁTICA II", 
+		"creditos": 3, 
+		"cursos": [{
+				"horarios": ["TPO jueves 19:00 22:00 PC-402"], 
+				"profesor": "COSSO-SALADINO", 
+				"curso": "01", 
+				"creditos": 3, 
+				"vacantes": 20
+			}, {
+				"horarios": ["TPO lunes 18:30 21:30 PC-A ASIG"], 
+				"profesor": "ZELASCO", 
+				"curso": "02", 
+				"creditos": 3, 
+				"vacantes": 20
+			}, {
+				"horarios": ["TO martes 18:00 21:00 PC-LE"], 
+				"profesor": "ALE", 
+				"curso": "03", 
+				"creditos": 3, 
+				"vacantes": 20
+			}], 
+		"correlativas": "7506-7544"
 	}, 
 	"7573": {
 		"nombre": "ARQUITECTURA DEL SOFTWARE", 
