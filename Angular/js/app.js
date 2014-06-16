@@ -36,6 +36,10 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
                     	else { 
                     		$scope.mandatoryCreditsTotal += 6;
                     	}
+                    } else if (subject.type === 'Orientación'){
+                   		$scope.mandatoryOrientedCreditsTotal = 34;
+                    } else if (subject.type === 'Electivas'){
+                    	$scope.electedCreditsTotal = 34;                	
                     }
                 });
             });
