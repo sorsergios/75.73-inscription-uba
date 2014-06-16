@@ -34,6 +34,18 @@
                 <div class="cell numbers">{{electedCreditsTotal}}</div>
             </div>
         </div>
+        <div class="selections">
+			<label>Orientación Elegida:</label>
+			<select ng-value="selectedOrientation">
+				<option ng-repeat="content in subjects.orientacion.content" 
+					value="{{content.id}}">{{content.description}}</option>
+			</select>
+			<label>Tesis o Trabajo Profesional:</label>
+			<select>
+				Tesis
+			</select>
+
+		</div>
     </header>
     <div class="overlay" ng-show="activeModal">
         <div class="coursesModal">
@@ -64,8 +76,8 @@
                 <a>SALIR</a>
             </nav>
             <div class="column inner-content">
-                <div ng-repeat="subject in subjects" class="columns">
-                    <h4>{{subject.type}}</h4>
+                <div ng-repeat="subject in [subjects.obligatorias, subjects.orientacion, subjects.electivas]" class="columns">
+                    <h4>{{subject.type}}{{selectedOrientation}}</h4>
                     <dl ng-repeat="group in subject.content">
                         <dt>{{group.description}}</dt>
                         <dd ng-repeat="assignature in group.assignatures" 

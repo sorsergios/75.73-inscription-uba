@@ -1,66 +1,73 @@
-[{
-		"type": "Obligatorias", 
-		"content": [{
-				"description": "Cuatrimestre 1", 
-				"assignatures": ["6103", "6201", "7540"]
+{
+	"obligatorias" : {
+		"type" : "Obligatorias",
+		"content" : [{
+				"description" : "Cuatrimestre 1",
+				"assignatures" : ["6103", "6201", "7540"]
 			}, {
-				"description": "Cuatrimestre 2", 
-				"assignatures": ["6108", "6203", "6301", "7541"]
+				"description" : "Cuatrimestre 2",
+				"assignatures" : ["6108", "6203", "6301", "7541"]
 			}, {
-				"description": "Cuatrimestre 3", 
-				"assignatures": ["6215", "6602", "6670", "7507", "7512"]
+				"description" : "Cuatrimestre 3",
+				"assignatures" : ["6215", "6602", "6670", "7507", "7512"]
 			}, {
-				"description": "Cuatrimestre 4", 
-				"assignatures": ["6109", "6110", "6620", "7506", "7542"]
+				"description" : "Cuatrimestre 4",
+				"assignatures" : ["6109", "6110", "6620", "7506", "7542"]
 			}, {
-				"description": "Cuatrimestre 5", 
-				"assignatures": ["7112", "7114", "7508", "7509"]
+				"description" : "Cuatrimestre 5",
+				"assignatures" : ["7112", "7114", "7508", "7509"]
 			}, {
-				"description": "Cuatrimestre 6", 
-				"assignatures": ["7510", "7515", "7543", "7552"]
+				"description" : "Cuatrimestre 6",
+				"assignatures" : ["7510", "7515", "7543", "7552"]
 			}, {
-				"description": "Cuatrimestre 7", 
-				"assignatures": ["7140", "7500", "7599"]
-			}]
-	}, {
-		"type": "Orientación", 
-		"content": [{
-				"id": 1, 
-				"description": "Gestión Industrial de Sistemas", 
-				"completed": true, 
-				"assignatures": ["7113", "7544", "7545", "7546", "7547", "7548"]
+				"description" : "Cuatrimestre 7",
+				"assignatures" : ["7140", "7500", "7599"]
+			}
+		]
+	},
+	"orientacion" : {
+		"type" : "Orientación",
+		"content" : [{
+				"id" : 1,
+				"description" : "Gestión Industrial de Sistemas",
+				"completed" : true,
+				"assignatures" : ["7113", "7544", "7545", "7546", "7547", "7548"]
 			}, {
-				"id": 2, 
-				"description": "Sistemas Distribuidos", 
-				"completed": true, 
-				"assignatures": ["6606", "6674", "7559", "7574", "7561"]
+				"id" : 2,
+				"description" : "Sistemas Distribuidos",
+				"completed" : true,
+				"assignatures" : ["6606", "6674", "7559", "7574", "7561"]
 			}, {
-				"id": 3, 
-				"description": "Sistemas de Producción", 
-				"completed": true, 
-				"assignatures": ["6405", "7201", "7565", "7566", "7567", "7568"]
-			}]
-	}, {
-		"type": "Electivas", 
-		"content": [{
-				"description": "matemática", 
-				"completed": true, 
-				"assignatures": ["6107", "6118", "6119"]
+				"id" : 3,
+				"description" : "Sistemas de Producción",
+				"completed" : true,
+				"assignatures" : ["6405", "7201", "7565", "7566", "7567", "7568"]
+			}
+		]
+	},
+	"electivas" : {
+		"type" : "Electivas",
+		"content" : [{
+				"description" : "matemática",
+				"completed" : true,
+				"assignatures" : ["6107", "6118", "6119"]
 			}, {
-				"description": "electrónica", 
-				"completed": true, 
-				"assignatures": ["6608", "6609", "6617", "6618", "6619", "6624", "6626", "6632", "6635", "6646", "6647", "6649", "6655", "6663", "6669", "6671", "6675"]
+				"description" : "electrónica",
+				"completed" : true,
+				"assignatures" : ["6608", "6609", "6617", "6618", "6619", "6624", "6626", "6632", "6635", "6646", "6647", "6649", "6655", "6663", "6669", "6671", "6675"]
 			}, {
-				"description": "gestión", 
-				"completed": true, 
-				"assignatures": ["7115", "7118", "7120", "7141", "7142", "7144", "7146"]
+				"description" : "gestión",
+				"completed" : true,
+				"assignatures" : ["7115", "7118", "7120", "7141", "7142", "7144", "7146"]
 			}, {
-				"description": "computación", 
-				"completed": true, 
-				"assignatures": ["7514", "7516", "7526", "7529", "7530", "7531", "7538", "7550", "7551", "7553", "7554", "7555", "7556", "7557", "7558", "7562", "7563", "7564", "7569", "7570", "7571", "7572", "7573"]
+				"description" : "computación",
+				"completed" : true,
+				"assignatures" : ["7514", "7516", "7526", "7529", "7530", "7531", "7538", "7550", "7551", "7553", "7554", "7555", "7556", "7557", "7558", "7562", "7563", "7564", "7569", "7570", "7571", "7572", "7573"]
 			}, {
-				"description": "idiomas", 
-				"completed": true, 
-				"assignatures": ["7801", "7802", "7803", "7804", "7805"]
-			}]
-	}]
+				"description" : "idiomas",
+				"completed" : true,
+				"assignatures" : ["7801", "7802", "7803", "7804", "7805"]
+			}
+		]
+	}
+}
