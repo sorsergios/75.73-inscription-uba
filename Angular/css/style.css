@@ -49,6 +49,23 @@ a {
 a:hover {
     decoration: underline;
 }
+.credits {
+    float: left;
+    display: table;
+    text-align: left;
+    margin-top: 12px;
+    width: 500px;
+}
+.credits .row {
+    width: 20px;
+    text-align: center;
+}
+.credits .names {
+    text-align: left;
+}
+.credits .numbers {
+    width: 40px;
+}
 .content {
     display: table;
     width: 100%;
@@ -63,8 +80,8 @@ a:hover {
 .inner-content {
     background: white;
     text-align: left;
-    margin: 0 auto 70px;
-    padding: 0 28px;
+    margin: 0 auto;
+    padding: 0 28px 50px;
 }
 
 footer .centered-content {
@@ -130,7 +147,7 @@ dd {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     overflow: scroll;
 }
 
@@ -138,6 +155,7 @@ dd {
     position: relative;
     width: 900px;
     min-height: 300px;
+    background: white;
     border: 1px solid blue;
     border-radius: 8px;
     margin: 100px auto;
@@ -164,11 +182,13 @@ dd {
     width: 100%;
 }
 
-.courses .row {
+.courses .row,
+.credits .row {
     display: table-row;
 }
 
-.courses .row .cell {
+.courses .row .cell,
+.credits .row .cell {
     display: table-cell;
 }
 

@@ -5,11 +5,34 @@
 var systemApp = angular.module('systemApp', ['systemFilters']);
 
 systemApp.controller('SystemCtrl', function ($scope, $http) {
+    
+    $scope.activeModal = false;
+    $scope.selectedCourse = {
+            'code': null,
+            'data': null,
+            'next': null
+    };
+    $scope.mandatoryCreditsSum = 0;
+    $scope.mandatoryCreditsTotal = 0;
+    $scope.mandatoryOrientedCreditsSum = 0;
+    $scope.mandatoryOrientedCreditsTotal = 0;
+    $scope.electedCreditsSum = 0;
+    $scope.electedCreditsTotal = 0;
+    
     $http.get('data/user_1.json').success(function(data) {
         $scope.user = data;
     });
     $http.get('data/subjects.json').success(function(data) {
         $scope.subjects = data;
+        angular.forEach(data, function(subject, key) {
+            angular.forEach(subject.content, function(group, key2) {
+                angular.forEach(group.assignatures, function(assignature, key3) {
+                    if (subject.type === 'Obligatorias'){
+                        $scope.mandatoryCreditsTotal += 6;
+                    }
+                });
+            });
+        });
     });
     $http.get('data/courses.json').success(function(data) {
         $scope.courses = data;
@@ -17,13 +40,6 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
     $http.get('data/next-courses.json').success(function(data) {
         $scope.nextCourses = data;
     });
-    
-    $scope.activeModal = false;
-    $scope.selectedCourse = {
-        'code': null,
-        'data': null,
-        'next': null
-    };
     
     $scope.completed = function(assignature) {
         if ($scope.user.subjects !== undefined
