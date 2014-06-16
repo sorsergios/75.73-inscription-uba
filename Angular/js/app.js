@@ -28,7 +28,14 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
             angular.forEach(subject.content, function(group, key2) {
                 angular.forEach(group.assignatures, function(assignature, key3) {
                     if (subject.type === 'Obligatorias'){
-                        $scope.mandatoryCreditsTotal += 6;
+                    	if (assignature === "7500") {
+                    		$scope.mandatoryCreditsTotal += 24;
+                    	} else if (assignature === "7140" || assignature === "7552" || assignature === "7542") {
+                    		$scope.mandatoryCreditsTotal += 4;
+                    	}
+                    	else { 
+                    		$scope.mandatoryCreditsTotal += 6;
+                    	}
                     }
                 });
             });
