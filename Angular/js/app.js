@@ -15,33 +15,26 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
     $scope.mandatoryCreditsSum = 0;
     $scope.mandatoryCreditsTotal = 0;
     $scope.mandatoryOrientedCreditsSum = 0;
-    $scope.mandatoryOrientedCreditsTotal = 0;
+    $scope.mandatoryOrientedCreditsTotal = 34;
     $scope.electedCreditsSum = 0;
-    $scope.electedCreditsTotal = 0;
+    $scope.electedCreditsTotal = 34;
+    
+    $scope.selectedOrientation = 1;
+    $scope.selectedTesis = "7500";
+    $scope.tesisElection = ["7500", "7599"];
     
     $http.get('data/user_1.json').success(function(data) {
         $scope.user = data;
     });
     $http.get('data/subjects.json').success(function(data) {
         $scope.subjects = data;
-        angular.forEach(data, function(subject, key) {
-            angular.forEach(subject.content, function(group, key2) {
-                angular.forEach(group.assignatures, function(assignature, key3) {
-                    if (subject.type === 'Obligatorias'){
-                    	if (assignature === "7500") {
-                    		$scope.mandatoryCreditsTotal += 24;
-                    	} else if (assignature === "7140" || assignature === "7552" || assignature === "7542") {
-                    		$scope.mandatoryCreditsTotal += 4;
-                    	}
-                    	else { 
-                    		$scope.mandatoryCreditsTotal += 6;
-                    	}
-                    } else if (subject.type === 'Orientación'){
-                   		$scope.mandatoryOrientedCreditsTotal = 34;
-                    } else if (subject.type === 'Electivas'){
-                    	$scope.electedCreditsTotal = 34;                	
-                    }
-                });
+        angular.forEach(data.obligatorias.content, function(subject, key) {
+            angular.forEach(subject.assignatures, function(assignature, key2) {
+                if (assignature === "7140" || assignature === "7552" || assignature === "7542") {
+                    $scope.mandatoryCreditsTotal += 4;
+                } else if ($scope.tesisElection.indexOf(assignature) === -1) {
+                    $scope.mandatoryCreditsTotal += 6;
+                }
             });
         });
     });

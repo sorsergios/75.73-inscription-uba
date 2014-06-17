@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="systemApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistema de inscripciones</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/filters.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta charset="UTF-8">
+<title>Sistema de inscripciones</title>
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/filters.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body ng-controller="SystemCtrl" ng-class="{'noScroll': activeModal}">
     <header>
         <h1>Sistema de Inscripciones</h1>
         <div class="credits">
             <div class="row">
-                <div class="cell names">Créditos en obligatorias comunes + Tesis o Trabajo Prof.: </div>
+                <div class="cell names">Créditos en obligatorias
+                    comunes + Tesis o Trabajo Prof.:</div>
                 <div class="cell numbers">{{mandatoryCreditsSum}}</div>
                 <div class="cell">de</div>
                 <div class="cell numbers">{{mandatoryCreditsTotal}}</div>
             </div>
             <div class="row">
-                <div class="cell names">Créditos en obligatorias orientación:</div>
+                <div class="cell names">Créditos en obligatorias
+                    orientación:</div>
                 <div class="cell numbers">{{mandatoryOrientedCreditsSum}}</div>
                 <div class="cell">de</div>
                 <div class="cell numbers">{{mandatoryOrientedCreditsTotal}}</div>
@@ -35,22 +37,26 @@
             </div>
         </div>
         <div class="selections">
-			<label>Orientación Elegida:</label>
-			<select ng-value="selectedOrientation">
-				<option ng-repeat="content in subjects.orientacion.content" 
-					value="{{content.id}}">{{content.description}}</option>
-			</select>
-			<label>Tesis o Trabajo Profesional:</label>
-			<select>
-				Tesis
-			</select>
-
-		</div>
+            <label>Orientación Elegida:
+                <select ng-model="selectedOrientation">
+                    <option
+                        ng-repeat="content in subjects.orientacion.content"
+                        ng-selected="$first"
+                        value="{{content.id}}">{{content.description}}</option>
+                </select> 
+            </label> 
+            <label>Tesis o Trabajo Profesional:
+                <select ng-model="selectedTesis">
+                    <option ng-repeat="assign in tesisElection" value="{{assign}}">{{courses[assign].nombre}}</option>
+                </select>
+            </label> 
+        </div>
     </header>
     <div class="overlay" ng-show="activeModal">
         <div class="coursesModal">
             <a class="close" href="#" ng-click="toggleModal()">x</a>
-            <h3>{{selectedCourse.code}} - {{selectedCourse.data.nombre}}</h3>
+            <h3>{{selectedCourse.code}} -
+                {{selectedCourse.data.nombre}}</h3>
             <div class="courses">
                 <div class="row header">
                     <div class="cell id">CURSOS</div>
@@ -58,12 +64,13 @@
                     <div class="cell profesor">PROFESORES</div>
                     <div class="cell times">HORARIOS</div>
                 </div>
-                <div ng-repeat="courses in selectedCourse.data.cursos" class="row">
+                <div ng-repeat="courses in selectedCourse.data.cursos"
+                    class="row">
                     <div class="cell id">{{courses.curso}}</div>
                     <div class="cell vacancy">{{courses.vacantes}}</div>
                     <div class="cell profesor">{{courses.profesor}}</div>
-                    <ul  class="cell times">
-                        <li ng-repeat="times in courses.horarios" >{{times}}</li>
+                    <ul class="cell times">
+                        <li ng-repeat="times in courses.horarios">{{times}}</li>
                     </ul>
                 </div>
             </div>
@@ -72,20 +79,23 @@
     <div class="content">
         <div class="content-row">
             <nav class="column">
-                <a>INICIO</a>
-                <a>SALIR</a>
+                <a>INICIO</a> <a>SALIR</a>
             </nav>
             <div class="column inner-content">
-                <div ng-repeat="subject in [subjects.obligatorias, subjects.orientacion, subjects.electivas]" class="columns">
-                    <h4>{{subject.type}}{{selectedOrientation}}</h4>
+                <div
+                    ng-repeat="(key, subject) in [subjects.obligatorias, subjects.orientacion, subjects.electivas] track by $index"
+                    class="columns">
+                    <h4>{{subject.type}}</h4>
                     <dl ng-repeat="group in subject.content">
-                        <dt>{{group.description}}</dt>
-                        <dd ng-repeat="assignature in group.assignatures" 
+                        <dt>
+                            <span ng-if="key != 1 || group.id == selectedOrientation">{{group.description}}</span>
+                            <span ng-if="key == 1 && group.id != selectedOrientation">Electiva</span></dt>
+                        <dd
+                            ng-repeat="assignature in group.assignatures"
                             ng-class="{0: 'complete', 1: 'incomplete', 2: 'invalid'}[completed(assignature)]"
                             ng-click="toggleModal(assignature)">
-                            <div class="">
-                            </div>
-                                {{assignature | getAssignature:this}}
+                            <div class=""></div>
+                            {{assignature | getAssignature:this}}
                         </dd>
                     </dl>
                 </div>
@@ -93,9 +103,9 @@
         </div>
     </div>
     <footer>
-        7573 - Arquitectura de Software - 1<sup>er</sup> Cuatrimestre 2014 - 
-        Profesor: Guillermo Rugilo - 
-        Alumnos: Estefanía Arias Montes (83728); Sergio Soria (86095)
+        7573 - Arquitectura de Software - 1<sup>er</sup> Cuatrimestre
+        2014 - Profesor: Guillermo Rugilo - Alumnos: Estefanía Arias
+        Montes (83728); Sergio Soria (86095)
     </footer>
 </body>
 </html>
