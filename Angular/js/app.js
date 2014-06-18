@@ -26,6 +26,9 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
     $http.get('data/user_1.json').success(function(data) {
         $scope.user = data;
     });
+    $http.get('data/inscriptions_1.json').success(function(data) {
+        $scope.userInscriptions = data;
+    });
     $http.get('data/subjects.json').success(function(data) {
         $scope.subjects = data;
         angular.forEach(data.obligatorias.content, function(subject, key) {

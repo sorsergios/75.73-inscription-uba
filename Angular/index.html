@@ -80,6 +80,14 @@
         <div class="content-row">
             <nav class="column">
                 <a>INICIO</a> <a>SALIR</a>
+                <br/>
+                <span class="centrar" >Usted está inscripto a:</span>
+                <br/>
+                <div class="inscripto">
+                 	<div style="width:190px;" ng-repeat="course in userInscriptions.subjects">
+                 		{{course}}
+                 	</div>
+                </div>
             </nav>
             <div class="column inner-content">
                 <div
