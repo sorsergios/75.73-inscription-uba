@@ -13,6 +13,8 @@ header {
     color: white;
     height: 75px;
     background-color: blue;
+    position: fixed;
+    width: 100%;
 }
 header h1 {
     float: left;
@@ -71,6 +73,7 @@ a:hover {
 .content {
     display: table;
     width: 100%;
+    padding: 75px 0 0 0;
 }
 .content-row {
     display: table-row;
@@ -134,6 +137,17 @@ dd {
     margin: 0;
     padding: 5px;
     cursor: pointer;
+    white-space: nowrap;
+}
+dd .buttons {
+    float: right;
+    display: none;
+}
+dd.complete .buttons {
+    display: block;
+}
+dd:hover .buttons {
+    display: block;
 }
 .incomplete {
     background-color: #CF2323;

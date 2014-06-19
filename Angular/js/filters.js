@@ -1,12 +1,13 @@
 filters = angular.module('systemFilters', []);
 
-filters.filter('getAssignature', function() {
-  return function(input, scope) {
-    if ((scope.courses !== undefined) && scope.courses.hasOwnProperty(input)) {
-        return input + ' - ' + scope.courses[input].nombre;
-    } else {
-        return input;
-    }
-    
-  };
+filters.filter('coalesce', function() {
+    return function(input, defaultText) {
+        return (input !== undefined && input >= 4) ? input : defaultText;
+    };
+});
+
+filters.filter('electedOrientation', function() {
+    return function(input, cond, defaultText) {
+        return (cond) ? input : defaultText;
+    };
 });

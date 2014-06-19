@@ -53,9 +53,17 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
         }
         return 2;
     };
+
+    $scope.isSelectedTesis = function(assignature) {
+        return ($scope.tesisElection.indexOf(assignature) === -1 || assignature === $scope.selectedTesis) ;
+    };
     
-    $scope.toggleModal = function(assignature) {
+    $scope.toggleModal = function() {
         $scope.activeModal = !$scope.activeModal;
+    };
+    
+    $scope.openModal = function(assignature) {
+        $scope.toggleModal();
         if ($scope.courses !== undefined
                 && $scope.courses.hasOwnProperty(assignature)) {
             $scope.selectedCourse.code = assignature;

@@ -88,14 +88,16 @@
                     <h4>{{subject.type}}</h4>
                     <dl ng-repeat="group in subject.content">
                         <dt>
-                            <span ng-if="key != 1 || group.id == selectedOrientation">{{group.description}}</span>
-                            <span ng-if="key == 1 && group.id != selectedOrientation">Electiva</span></dt>
-                        <dd
-                            ng-repeat="assignature in group.assignatures"
-                            ng-class="{0: 'complete', 1: 'incomplete', 2: 'invalid'}[completed(assignature)]"
-                            ng-click="toggleModal(assignature)">
-                            <div class=""></div>
-                            {{assignature | getAssignature:this}}
+                            {{group.description | electedOrientation : key != 1 || (key == 1 && group.id == selectedOrientation): 'Electiva'}}
+                        </dt>
+                        <dd ng-repeat="assignature in group.assignatures"
+                            ng-class="{'complete': user.subjects[assignature].grade >= 4}"
+                            ng-click="openModal(assignature)"
+                            ng-show="isSelectedTesis(assignature)">
+                            {{assignature}} - {{courses[assignature].nombre}}
+                            <button class="buttons">
+                                {{user.subjects[assignature].grade | coalesce : 'Nota'}}
+                            </button>
                         </dd>
                     </dl>
                 </div>
