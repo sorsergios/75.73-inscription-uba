@@ -33,8 +33,10 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
         $scope.subjects = data;
         angular.forEach(data.obligatorias.content, function(subject, key) {
             angular.forEach(subject.assignatures, function(assignature, key2) {
-                if (assignature === "7140" || assignature === "7552" || assignature === "7542") {
+                if (assignature === "7140" || assignature === "7552" || assignature === "7542" || assignature === "6215") {
                     $scope.mandatoryCreditsTotal += 4;
+                } else if (assignature === "6108" || assignature === "6103" || assignature === "6201" || assignature === "6203") {
+                	$scope.mandatoryCreditsTotal += 8;
                 } else if ($scope.tesisElection.indexOf(assignature) === -1) {
                     $scope.mandatoryCreditsTotal += 6;
                 }
