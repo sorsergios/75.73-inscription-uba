@@ -243,3 +243,19 @@ dd:hover .buttons {
     text-align: left;
     width: 440px;
 }
+.inscripto {
+    height: 80%;
+    width: 90%;	
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+}
+.centrar{
+    display: block;
+    color: white;
+    text-align: center;
+}
+
