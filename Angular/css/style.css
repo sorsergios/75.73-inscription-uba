@@ -251,7 +251,7 @@ dd:hover .buttons {
     color: black;
     margin-left: auto;
     margin-right: auto;
-    white-space: pre-wrap;
+    white-space: normal;
 }
 .centrar{
     display: block;
