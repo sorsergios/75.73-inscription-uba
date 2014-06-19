@@ -84,8 +84,12 @@
                 <span class="centrar" >Usted está inscripto a:</span>
                 <br/>
                 <div class="inscripto">
-                 	<div style="width:190px;" ng-repeat="assignature in userInscriptions.subjects">
-                 		{{assignature.course}} - {{assignature.horarios}}
+                 	<div style="width:190px;" 
+                 		ng-repeat="assignature in userInscriptions.subjects">
+                 		<span style="text-align: left;">{{assignature.code}}- curso:{{assignature.course}}<span>
+                 		<ul class="cell times">
+                        	<li ng-repeat="times in assignature.horarios">{{times}}</li>
+                    	</ul> 
                  	</div>
                 </div>
             </nav>
