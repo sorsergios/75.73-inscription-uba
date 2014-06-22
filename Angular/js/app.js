@@ -4,7 +4,7 @@
 
 var systemApp = angular.module('systemApp', ['systemFilters']);
 
-systemApp.controller('SystemCtrl', function ($scope, $http) {
+systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     
     $scope.activeModal = false;
     $scope.selectedCourse = {
@@ -23,31 +23,31 @@ systemApp.controller('SystemCtrl', function ($scope, $http) {
     $scope.selectedTesis = "7500";
     $scope.tesisElection = ["7500", "7599"];
     
-    $http.get('data/user_1.json').success(function(data) {
+    $http.get('data/user_1.json').success(function(data){
         $scope.user = data;
     });
-    $http.get('data/inscriptions_1.json').success(function(data) {
+    $http.get('data/inscriptions_1.json').success(function(data){
         $scope.userInscriptions = data;
     });
-    $http.get('data/subjects.json').success(function(data) {
-        $scope.subjects = data;
-        angular.forEach(data.obligatorias.content, function(subject, key) {
+    
+    $http.get('data/next-courses.json').success(function(data){
+        $scope.nextCourses = data;
+    });
+    
+    $scope.subjects = $http.get('data/subjects.json');
+    $scope.courses = $http.get('data/courses.json');
+    
+    $q.all([$scope.subjects,$scope.courses])
+        .then(function(arrayOfResults){
+        $scope.subjects = arrayOfResults[0].data;
+        $scope.courses = arrayOfResults[1].data;
+        angular.forEach($scope.subjects.obligatorias.content, function(subject, key) {
             angular.forEach(subject.assignatures, function(assignature, key2) {
-                if (assignature === "7140" || assignature === "7552" || assignature === "7542" || assignature === "6215") {
-                    $scope.mandatoryCreditsTotal += 4;
-                } else if (assignature === "6108" || assignature === "6103" || assignature === "6201" || assignature === "6203") {
-                	$scope.mandatoryCreditsTotal += 8;
-                } else if ($scope.tesisElection.indexOf(assignature) === -1) {
-                    $scope.mandatoryCreditsTotal += 6;
+                if ($scope.tesisElection.indexOf(assignature) === -1) {
+                    $scope.mandatoryCreditsTotal += $scope.courses[assignature].creditos;
                 }
             });
         });
-    });
-    $http.get('data/courses.json').success(function(data) {
-        $scope.courses = data;
-    });
-    $http.get('data/next-courses.json').success(function(data) {
-        $scope.nextCourses = data;
     });
     
     $scope.completed = function(assignature) {

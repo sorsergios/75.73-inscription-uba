@@ -20,7 +20,7 @@
                     comunes + Tesis o Trabajo Prof.:</div>
                 <div class="cell numbers">{{mandatoryCreditsSum}}</div>
                 <div class="cell">de</div>
-                <div class="cell numbers">{{mandatoryCreditsTotal}}</div>
+                <div class="cell numbers">{{mandatoryCreditsTotal + courses[selectedTesis].creditos}}</div>
             </div>
             <div class="row">
                 <div class="cell names">Créditos en obligatorias
@@ -33,7 +33,7 @@
                 <div class="cell names">Créditos en electivas:</div>
                 <div class="cell numbers">{{electedCreditsSum}}</div>
                 <div class="cell">de</div>
-                <div class="cell numbers">{{electedCreditsTotal}}</div>
+                <div class="cell numbers">{{electedCreditsTotal | addCredits:this }}</div>
             </div>
         </div>
         <div class="selections">
@@ -79,18 +79,17 @@
     <div class="content">
         <div class="content-row">
             <nav class="column">
-                <a>INICIO</a> <a>SALIR</a>
-                <br/>
-                <span class="centrar" >Usted está inscripto a:</span>
-                <br/>
+                <a>INICIO</a>
+                <a>SALIR</a>
+                <p class="centrar" >Usted está inscripto a:</p>
                 <div class="inscripto">
-                 	<div style="width:170px;" 
-                 		ng-repeat="assignature in userInscriptions.subjects">
-                 		<span style="text-align: left;">{{assignature.code}}- curso:{{assignature.course}}<span>
-                 		<ul class="cell times">
-                        	<li ng-repeat="times in assignature.horarios">{{times}}</li>
-                    	</ul> 
-                 	</div>
+                    <div style="width:170px;" 
+                        ng-repeat="assignature in userInscriptions.subjects">
+                        <span style="text-align: left;">{{assignature.code}}- curso:{{assignature.course}}</span>
+                        <ul class="cell times">
+                            <li ng-repeat="times in assignature.horarios">{{times}}</li>
+                        </ul> 
+                    </div>
                 </div>
             </nav>
             <div class="column inner-content">
@@ -104,10 +103,14 @@
                         </dt>
                         <dd ng-repeat="assignature in group.assignatures"
                             ng-class="{'complete': user.subjects[assignature].grade >= 4}"
-                            ng-click="openModal(assignature)"
                             ng-show="isSelectedTesis(assignature)">
                             {{assignature}} - {{courses[assignature].nombre}}
-                            <button class="buttons">
+                            <button class="buttons"
+                                ng-click="openModal(assignature)">
+                                Horarios
+                            </button>
+                            <button class="buttons"
+                                ng-click="openModal(assignature)">
                                 {{user.subjects[assignature].grade | coalesce : 'Nota'}}
                             </button>
                         </dd>
