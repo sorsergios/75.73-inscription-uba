@@ -1,29 +1,21 @@
-{
-	"subjects": {
-		"6215": {
-			"code": 6215,
-			"course": 1,
-			"horarios": ["T martes 18:00 20:00 PC-211B P miercoles 18:00 20:00 PC-203"]
-		},  
-		"6602": {
-			"code": 6602,
-			"course": 2,
-			"horarios": ["TO lunes 19:00 22:00 PC-305", "TPO miercoles 15:00 18:00 PC-401"]
-		}, 
-		"6670": {
-			"code": 6670,
-			"course": 3,
-			"horarios": ["T martes 16:00 19:00 PC-L15", "TPO viernes 16:00 19:00 PC-407"]
-		}, 
-		"7507": {
-			"code": 7507,
-			"course": 3,
-			"horarios": ["TO lunes 16:00 19:00 PC-403", "TP miercoles 16:00 19:00 PC-221"]
-		}, 
-		"7512": {
-			"code": 7512,
-			"course": 4,
-			"horarios": ["TPO martes 19:00 22:00 LH-311", "TO viernes 15:00 18:00 LH-311"]
-		}
-	}
-}
+[{
+		"code": 6215, 
+		"course": 1, 
+		"horarios": ["T martes 18:00 20:00 PC-211B", "P miercoles 18:00 20:00 PC-203"]
+	}, {
+		"code": 6602, 
+		"course": 2, 
+		"horarios": ["TO lunes 19:00 22:00 PC-305", "TPO miercoles 15:00 18:00 PC-401"]
+	}, {
+		"code": 6670, 
+		"course": 3, 
+		"horarios": ["T martes 16:00 19:00 PC-L15", "TPO viernes 16:00 19:00 PC-407"]
+	}, {
+		"code": 7507, 
+		"course": 3, 
+		"horarios": ["TO lunes 16:00 19:00 PC-403", "TP miercoles 16:00 19:00 PC-221"]
+	}, {
+		"code": 7512, 
+		"course": 4, 
+		"horarios": ["TPO martes 19:00 22:00 LH-311", "TO viernes 15:00 18:00 LH-311"]
+	}]
