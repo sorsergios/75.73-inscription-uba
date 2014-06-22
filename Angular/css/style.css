@@ -22,22 +22,22 @@ header h1 {
     margin: 5px 0 0 50px;
     text-align: left;
 }
-nav {
+.info {
     border-right: 1px solid #0000FF;
     text-align: left;
     white-space: nowrap;
     background-color: #007CFF;
-    width: 190px;
+    width: 250px;
     color: white;
 }
 
-nav a {
+.info a {
     display: block;
     padding: 5px 20px;
     color: white;
 }
-nav a.active,
-nav a:hover {
+.info a.active,
+.info a:hover {
     color: white;
     background-color: blue;
 }
@@ -138,6 +138,13 @@ dd {
     padding: 5px;
     cursor: pointer;
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+dd .name {
+    clear: both;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 dd .buttons {
     float: right;
@@ -244,14 +251,11 @@ dd:hover .buttons {
     width: 440px;
 }
 .inscripto {
-    height: 80%;
-    width: 90%;	
-    border: 1px solid gray;
+    padding: 0 15px 20px;
+    border: 1px solid lightblue;
     background-color: whitesmoke;
     color: black;
-    margin-left: auto;
-    margin-right: auto;
-    white-space: normal;
+    margin: 0 15px;
 }
 .centrar{
     display: block;
@@ -259,3 +263,16 @@ dd:hover .buttons {
     text-align: center;
 }
 
+.inscripto .times{
+    list-style: none;
+    padding: 0;
+    font-size: 85%;
+}
+
+.inscripto h5 {
+    margin-bottom: 0;
+}
+
+.inscripto ul {
+    margin: 5px 0 0 10px;
+}
