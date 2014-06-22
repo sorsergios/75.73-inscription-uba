@@ -59,6 +59,7 @@
                 {{selectedCourse.data.nombre}}</h3>
             <div class="courses">
                 <div class="row header">
+                	<div class="cell "></div>
                     <div class="cell id">CURSOS</div>
                     <div class="cell vacancy">VACANTES</div>
                     <div class="cell profesor">PROFESORES</div>
@@ -66,6 +67,7 @@
                 </div>
                 <div ng-repeat="courses in selectedCourse.data.cursos"
                     class="row">
+                    <div class="cell "><input type="radio" ></div>
                     <div class="cell id">{{courses.curso}}</div>
                     <div class="cell vacancy">{{courses.vacantes}}</div>
                     <div class="cell profesor">{{courses.profesor}}</div>
@@ -73,25 +75,26 @@
                         <li ng-repeat="times in courses.horarios">{{times}}</li>
                     </ul>
                 </div>
+                <div class="modal-footer">
+    				<a href="#" class="btn">Cerrar</a>
+    				<a href="#" class="btn">Inscribir</a>
+				</div>
             </div>
         </div>
     </div>
     <div class="content">
         <div class="content-row">
-            <nav class="column">
-                <a>INICIO</a>
-                <a>SALIR</a>
-                <p class="centrar" >Usted está inscripto a:</p>
+            <div class="column info">
+                <h4 class="centrar" >Usted está inscripto a:</h4>
                 <div class="inscripto">
-                    <div style="width:170px;" 
-                        ng-repeat="assignature in userInscriptions.subjects">
-                        <span style="text-align: left;">{{assignature.code}}- curso:{{assignature.course}}</span>
-                        <ul class="cell times">
-                            <li ng-repeat="times in assignature.horarios">{{times}}</li>
+                    <div ng-repeat="inscription in userInscriptions">
+                        <h5 style="text-align: left;">{{inscription.code}} - {{courses[inscription.code].nombre}}</h5>
+                        <ul class="times">
+                            <li ng-repeat="times in inscription.horarios">{{times}}</li>
                         </ul> 
                     </div>
                 </div>
-            </nav>
+            </div>
             <div class="column inner-content">
                 <div
                     ng-repeat="(key, subject) in [subjects.obligatorias, subjects.orientacion, subjects.electivas] track by $index"
@@ -104,13 +107,13 @@
                         <dd ng-repeat="assignature in group.assignatures"
                             ng-class="{'complete': user.subjects[assignature].grade >= 4}"
                             ng-show="isSelectedTesis(assignature)">
-                            {{assignature}} - {{courses[assignature].nombre}}
+                            <div class="name">{{assignature}} - {{courses[assignature].nombre}}</div>
                             <button class="buttons"
-                                ng-click="openModal(assignature)">
+                                ng-click="openModal(assignature)"
+                                ng-hide="user.subjects[assignature].grade >= 4">
                                 Horarios
                             </button>
-                            <button class="buttons"
-                                ng-click="openModal(assignature)">
+                            <button class="buttons">
                                 {{user.subjects[assignature].grade | coalesce : 'Nota'}}
                             </button>
                         </dd>
