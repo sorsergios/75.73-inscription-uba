@@ -276,9 +276,29 @@ dd:hover .buttons {
 .inscripto ul {
     margin: 5px 0 0 10px;
 }
-.modal-footer {
-    text-align: right;
-    .btn {
 
-    }
+.btn {
+	background:-moz-linear-gradient( center top, #007CFF 5%, #4197ee 100% );
+	background-color:#79bbff;
+	display:inline-block;
+	color:#ffffff;
+	height:24px;
+	line-height:24px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+        border-radius: 6px;
+}
+.btn:hover {
+	background:-moz-linear-gradient( center top, #4197ee 5%, #007CFF 100% );
+	background-color:#4197ee;
+	border-radius: 6px;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+.modal-footer {
+    text-align: center;
 }

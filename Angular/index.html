@@ -67,7 +67,7 @@
                 </div>
                 <div ng-repeat="courses in selectedCourse.data.cursos"
                     class="row">
-                    <div class="cell "><input type="radio" ></div>
+                    <div class="cell "><input type="radio" name="inscribir" ></div>
                     <div class="cell id">{{courses.curso}}</div>
                     <div class="cell vacancy">{{courses.vacantes}}</div>
                     <div class="cell profesor">{{courses.profesor}}</div>
@@ -75,11 +75,13 @@
                         <li ng-repeat="times in courses.horarios">{{times}}</li>
                     </ul>
                 </div>
-                <div class="modal-footer">
-    				<a href="#" class="btn">Cerrar</a>
-    				<a href="#" class="btn">Inscribir</a>
-				</div>
             </div>
+            <br>
+            <div class="modal-footer">
+               	<a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
+               	<a href="#" class="btn" ng-click="toggleModal()">Inscribir</a>
+			</div>
+			<br>
         </div>
     </div>
     <div class="content">

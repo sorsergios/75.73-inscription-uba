@@ -120,7 +120,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["TPO martes 15:00 19:00 PC-E9"], 
-				"profesor": "BALI�A-GOGNI-BENYAKAR", 
+				"profesor": "BALIÑA-GOGNI-BENYAKAR", 
 				"curso": "08", 
 				"vacantes": 20
 			}, {
@@ -252,7 +252,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["PO martes 18:00 20:00 PC-200", "TO martes 20:00 22:00 PC-200", "PO viernes 18:00 20:00 PC-200", "TO viernes 20:00 22:00 PC-200"], 
-				"profesor": "MANCILLA AGUILAR-SCARAMAL-GR�ER", 
+				"profesor": "MANCILLA AGUILAR-SCARAMAL-GRÑER", 
 				"curso": "21A", 
 				"vacantes": 20
 			}, {
@@ -647,7 +647,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["PO martes 18:00 20:00 PC-200", "TO martes 20:00 22:00 PC-200", "PO viernes 18:00 20:00 PC-200", "TO viernes 20:00 22:00 PC-200"], 
-				"profesor": "MANCILLA AGUILAR-SCARAMAL-GR�ER", 
+				"profesor": "MANCILLA AGUILAR-SCARAMAL-GRÑER", 
 				"curso": "21A", 
 				"vacantes": 20
 			}, {
@@ -693,7 +693,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["TPO martes 15:00 19:00 PC-E9"], 
-				"profesor": "BALI�A-GOGNI-BENYAKAR", 
+				"profesor": "BALIÑA-GOGNI-BENYAKAR", 
 				"curso": "08", 
 				"vacantes": 20
 			}], 
@@ -1413,17 +1413,17 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["TPO sabado 07:00 13:00 PC-504"], 
-				"profesor": "RICOTTI-GAMBOA BRICE�O-DIAZ", 
+				"profesor": "RICOTTI-GAMBOA BRICEÑO-DIAZ", 
 				"curso": "14", 
 				"vacantes": 20
 			}, {
 				"horarios": ["TO lunes 09:30 11:30 PC-504", "PO miercoles 09:30 13:30 PC-504"], 
-				"profesor": "URE�A-BONAVENTURA-RUIZ", 
+				"profesor": "UREÑA-BONAVENTURA-RUIZ", 
 				"curso": "16", 
 				"vacantes": 20
 			}, {
 				"horarios": ["TO miercoles 16:00 18:00 PC-504", "PO jueves 15:00 19:00 PC-501"], 
-				"profesor": "VAZQUEZ-CALLERI-MONTA�O-GIBERTI", 
+				"profesor": "VAZQUEZ-CALLERI-MONTAÑO-GIBERTI", 
 				"curso": "17", 
 				"vacantes": 20
 			}, {
@@ -1654,17 +1654,17 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["TPO sabado 07:00 13:00 PC-504"], 
-				"profesor": "RICOTTI-GAMBOA BRICE�O-DIAZ", 
+				"profesor": "RICOTTI-GAMBOA BRICEÑO-DIAZ", 
 				"curso": "14", 
 				"vacantes": 20
 			}, {
 				"horarios": ["TO lunes 09:30 11:30 PC-504", "PO miercoles 09:30 13:30 PC-504"], 
-				"profesor": "URE�A-BONAVENTURA-RUIZ", 
+				"profesor": "UREÑA-BONAVENTURA-RUIZ", 
 				"curso": "16", 
 				"vacantes": 20
 			}, {
 				"horarios": ["TO miercoles 16:00 18:00 PC-504", "PO jueves 15:00 19:00 PC-501"], 
-				"profesor": "VAZQUEZ-CALLERI-MONTA�O-GIBERTI", 
+				"profesor": "VAZQUEZ-CALLERI-MONTAÑO-GIBERTI", 
 				"curso": "17", 
 				"vacantes": 20
 			}, {
@@ -2012,7 +2012,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["TPO lunes 19:00 23:00 LH-11", "TPO jueves 19:00 23:00 LH-11"], 
-				"profesor": "SATOSTEGUI-LADAGA-ROFRANO-MU�OZ-DE", 
+				"profesor": "SATOSTEGUI-LADAGA-ROFRANO-MUÑOZ-DE", 
 				"curso": "1", 
 				"vacantes": 20
 			}], 
@@ -2316,7 +2316,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["PO martes 15:00 17:00 PC-LEM", "TO miercoles 15:00 17:00 PC-LEM"], 
-				"profesor": "PEREZ-ALBARRAC�N VALENCIA", 
+				"profesor": "PEREZ-ALBARRACIN VALENCIA", 
 				"curso": "01", 
 				"vacantes": 20
 			}], 
@@ -2502,7 +2502,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["TPO lunes 16:00 19:00 PC-S27", "TPO miercoles 16:00 19:00 PC-S27"], 
-				"profesor": "BERTOLOTTI-GRA�A", 
+				"profesor": "BERTOLOTTI-GRAÑA", 
 				"curso": "01", 
 				"vacantes": 20
 			}], 
@@ -2513,7 +2513,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["PO martes 15:00 17:00 PC-LEM", "TO miercoles 15:00 17:00 PC-LEM"], 
-				"profesor": "PEREZ-ALBARRAC�N VALENCIA", 
+				"profesor": "PEREZ-ALBARRACÍN VALENCIA", 
 				"curso": "1", 
 				"vacantes": 20
 			}], 
@@ -2524,7 +2524,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["TPO lunes 15:00 17:00 PC-LEM"], 
-				"profesor": "PEREZ-ALBARRAC�N VALENCIA", 
+				"profesor": "PEREZ-ALBARRACÍN VALENCIA", 
 				"curso": "1", 
 				"vacantes": 20
 			}], 
@@ -2868,7 +2868,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["T lunes 16:00 19:00 PC-203", "TPO jueves 19:00 22:00 PC-222"], 
-				"profesor": "HAMKALO-HEGUIABEHERE-NI�O", 
+				"profesor": "HAMKALO-HEGUIABEHERE-NIÑO", 
 				"curso": "2", 
 				"vacantes": 20
 			}], 
@@ -2956,7 +2956,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["EPO miercoles 18:00 22:00 PC-413 EP sabado 09:00 11:00 PC-105"], 
-				"profesor": "GARCIA GALI�ANES", 
+				"profesor": "GARCIA GALIÑANES", 
 				"curso": "01", 
 				"vacantes": 20
 			}], 
@@ -3075,7 +3075,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["T martes 19:00 22:00 PC-211C", "TPO jueves 19:00 22:00 PC-513"], 
-				"profesor": "CRUZ-GRA�A-CABIBBO", 
+				"profesor": "CRUZ-GRAÑA-CABIBBO", 
 				"curso": "2", 
 				"vacantes": 20
 			}, {
@@ -3217,7 +3217,7 @@
 				"vacantes": 20
 			}, {
 				"horarios": ["T martes 19:00 22:00 PC-211C", "PO jueves 19:00 22:00 PC-513"], 
-				"profesor": "CRUZ-GRA�A-CABIBBO", 
+				"profesor": "CRUZ-GRAÑA-CABIBBO", 
 				"curso": "2", 
 				"vacantes": 20
 			}, {
@@ -4302,7 +4302,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["TO lunes 17:00 19:00 PC-E32", "PO lunes 19:00 21:00 PC-E32", "TO jueves 17:00 21:00 PC-E32"], 
-				"profesor": "FALCO-ZANNONI-MA�E TARTERA", 
+				"profesor": "FALCO-ZANNONI-MAÑE TARTERA", 
 				"curso": "001", 
 				"vacantes": 20
 			}], 
@@ -4948,7 +4948,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["DC jueves 19:00 21:00 LH-204", "TPO viernes 19:00 23:00 LH-204"], 
-				"profesor": "CORTES-RA�O-CORTES", 
+				"profesor": "CORTES-RAÑO-CORTES", 
 				"curso": "1", 
 				"vacantes": 20
 			}], 
@@ -5397,7 +5397,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["TPO jueves 17:00 23:00 LH-309"], 
-				"profesor": "LAURIA-GR�ER", 
+				"profesor": "LAURIA-GRÑER", 
 				"curso": "1", 
 				"vacantes": 20
 			}], 
@@ -7801,7 +7801,7 @@
 		"creditos": 6, 
 		"cursos": [{
 				"horarios": ["PO miercoles 13:00 18:00 CU-209", "PO viernes 13:00 18:00 CU-209"], 
-				"profesor": "AMADEO-LABORDE-GIUNTA-MARI�O-DIEUZ", 
+				"profesor": "AMADEO-LABORDE-GIUNTA-MARIÑO-DIEUZ", 
 				"curso": "1", 
 				"vacantes": 20
 			}], 
