@@ -82,9 +82,9 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
         }
     };
     
-    function getCheckedRadio(radio_group) {
-        for (var i = 0; i < radio_group.length; i++) {
-            var button = radio_group[i];
+    function getCheckedRadio(courseList) {
+        for (var i = 0; i < courseList.length; i++) {
+            var button = courseList[i];
             if (button.checked) {
                 return button;
             }
@@ -93,8 +93,8 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     }
     
     $scope.register = function () {
-    	var cursos = document.getElementsByName("idCourse");
-    	var checkedButton = getCheckedRadio(cursos);
+    	var courseList = document.getElementsByName("idCourse");
+    	var checkedButton = getCheckedRadio(courseList);
     	if (checkedButton !== undefined) {
     		var timesList; 
     		var courseCode = $scope.selectedCourse.code;
