@@ -83,7 +83,6 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     };
     
     $scope.checkedButton = function (courseList) {
-    	var checked = true;
     	var select = undefined;
     	angular.forEach(courseList, function(button, id) {
 			if (button.checked){ 
