@@ -96,8 +96,14 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     	var cursos = document.getElementsByName("idCourse");
     	var checkedButton = getCheckedRadio(cursos);
     	if (checkedButton !== undefined) {
+    		var timesList; 
     		var courseCode = $scope.selectedCourse.code;
-    		var timesList = $scope.courses[courseCode].cursos[checkedButton.id].horarios
+    		for (var i = 0; i < $scope.courses[courseCode].cursos.length ; i++) {
+    			if ($scope.courses[courseCode].cursos[i].curso == checkedButton.id ){ 
+    				timesList = $scope.courses[courseCode].cursos[i].horarios;
+    				break;
+    			}
+    		}
     		
         	this.userInscriptions.push ({
     		"code": courseCode, 
