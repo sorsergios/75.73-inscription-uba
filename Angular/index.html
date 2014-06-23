@@ -67,7 +67,7 @@
                 </div>
                 <div ng-repeat="courses in selectedCourse.data.cursos"
                     class="row">
-                    <div class="cell "><input type="radio" name="inscribir" ></div>
+                    <div class="cell "><input type="radio" name="idCourse" id={{courses.curso}}></div>
                     <div class="cell id">{{courses.curso}}</div>
                     <div class="cell vacancy">{{courses.vacantes}}</div>
                     <div class="cell profesor">{{courses.profesor}}</div>
@@ -79,7 +79,7 @@
             <br>
             <div class="modal-footer">
                	<a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
-               	<a href="#" class="btn" ng-click="toggleModal()">Inscribir</a>
+               	<a href="#" class="btn" ng-click="register()">Inscribir</a>
 			</div>
 			<br>
         </div>
@@ -93,7 +93,8 @@
                         <h5 style="text-align: left;">{{inscription.code}} - {{courses[inscription.code].nombre}}</h5>
                         <ul class="times">
                             <li ng-repeat="times in inscription.horarios">{{times}}</li>
-                        </ul> 
+                        </ul>
+                     	<a href="#" class="btn" ng-click="removeContact(inscription)">Eliminar</a>
                     </div>
                 </div>
             </div>

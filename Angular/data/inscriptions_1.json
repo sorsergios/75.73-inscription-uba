@@ -14,8 +14,4 @@
 		"code": 7507, 
 		"course": 3, 
 		"horarios": ["TO lunes 16:00 19:00 PC-403", "TP miercoles 16:00 19:00 PC-221"]
-	}, {
-		"code": 7512, 
-		"course": 4, 
-		"horarios": ["TPO martes 19:00 22:00 LH-311", "TO viernes 15:00 18:00 LH-311"]
 	}]

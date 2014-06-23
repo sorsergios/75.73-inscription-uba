@@ -81,4 +81,38 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
             $scope.selectedCourse.code = 'none';
         }
     };
+    
+    function getCheckedRadio(radio_group) {
+        for (var i = 0; i < radio_group.length; i++) {
+            var button = radio_group[i];
+            if (button.checked) {
+                return button;
+            }
+        }
+        return undefined;
+    }
+    
+    $scope.register = function () {
+    	var cursos = document.getElementsByName("idCourse");
+    	var checkedButton = getCheckedRadio(cursos);
+    	if (checkedButton !== undefined) {
+    		var courseCode = $scope.selectedCourse.code;
+    		var timesList = $scope.courses[courseCode].cursos[checkedButton.id].horarios
+    		
+        	this.userInscriptions.push ({
+    		"code": courseCode, 
+    		"course": checkedButton.id, 
+    		"horarios": timesList
+        	});
+        	$scope.toggleModal ();    		
+    	} else {
+    		alert("Seleccione un curso a inscribirse!")
+    	}
+    	
+    };
+    
+    $scope.removeContact = function (contactToRemove) {
+    	var index = this.userInscriptions.indexOf(contactToRemove);
+    	this.userInscriptions.splice(index, 1);
+    };
 });
