@@ -100,29 +100,33 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     }
     
     $scope.register = function () {
-    	var courseList = document.getElementsByName("idCourse");
-    	var checkedButton = $scope.checkedButton(courseList);
-    	if (checkedButton !== undefined) {
-    		var timesList; 
-    		var courseCode = $scope.selectedCourse.code;
-    		angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
-    			if (course.curso == checkedButton.id ){ 
-    				timesList = course.horarios;
-    			}
-    		});
-    		
-        	this.userInscriptions.push ({
-    		"code": courseCode, 
-    		"course": checkedButton.id, 
-    		"horarios": timesList
-        	});
-        	$scope.toggleModal ();    		
+    	if (this.userInscriptions.length > 9) {
+    		alert ("No puede inscribirse a más de 10 materias por cuatrimestre!")
     	} else {
-    		alert("Seleccione un curso a inscribirse!")
-    	}
-    	if (this.userInscriptions.length > 0) {
-    		$scope.inscriptions = true;
-    		$scope.noInscriptions = false;
+	    	var courseList = document.getElementsByName("idCourse");
+	    	var checkedButton = $scope.checkedButton(courseList);
+	    	if (checkedButton !== undefined) {
+	    		var timesList; 
+	    		var courseCode = $scope.selectedCourse.code;
+	    		angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
+	    			if (course.curso == checkedButton.id ){ 
+	    				timesList = course.horarios;
+	    			}
+	    		});
+	    		
+	        	this.userInscriptions.push ({
+	    		"code": courseCode, 
+	    		"course": checkedButton.id, 
+	    		"horarios": timesList
+	        	});
+	        	$scope.toggleModal ();    		
+	    	} else {
+	    		alert("Seleccione un curso a inscribirse!")
+	    	}
+	    	if (this.userInscriptions.length > 0) {
+	    		$scope.inscriptions = true;
+	    		$scope.noInscriptions = false;
+	    	}
     	}
     };
     
