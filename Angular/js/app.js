@@ -82,23 +82,23 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
         }
     };
     
-    function getCheckedRadio(courseList) {
-        for (var i = 0; i < courseList.length; i++) {
-            var button = courseList[i];
-            if (button.checked) {
-                return button;
-            }
-        }
-        return undefined;
+    $scope.checkedButton = function (courseList) {
+    	var checked = true;
+    	var select = undefined;
+    	angular.forEach(courseList, function(button, id) {
+			if (button.checked){ 
+				select = button;
+			}
+		});
+    	return select;
     }
     
     $scope.register = function () {
     	var courseList = document.getElementsByName("idCourse");
-    	var checkedButton = getCheckedRadio(courseList);
+    	var checkedButton = $scope.checkedButton(courseList);
     	if (checkedButton !== undefined) {
     		var timesList; 
     		var courseCode = $scope.selectedCourse.code;
-    		var id =  checkedButton.id
     		angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
     			if (course.curso == checkedButton.id ){ 
     				timesList = course.horarios;
