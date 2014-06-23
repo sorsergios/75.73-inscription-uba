@@ -27,7 +27,14 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
         $scope.user = data;
     });
     $http.get('data/inscriptions_1.json').success(function(data){
-        $scope.userInscriptions = data;
+    	if (data !== undefined) {
+    		$scope.inscriptions = true;
+    		$scope.noInscriptions = false;
+    		$scope.userInscriptions = data;
+    	} else {
+    		$scope.inscriptions = false;
+    		$scope.noInscriptions = true;
+    	}
     });
     
     $http.get('data/next-courses.json').success(function(data){
@@ -113,11 +120,18 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     	} else {
     		alert("Seleccione un curso a inscribirse!")
     	}
-    	
+    	if (this.userInscriptions.length > 0) {
+    		$scope.inscriptions = true;
+    		$scope.noInscriptions = false;
+    	}
     };
     
     $scope.removeContact = function (contactToRemove) {
     	var index = this.userInscriptions.indexOf(contactToRemove);
     	this.userInscriptions.splice(index, 1);
+    	if (this.userInscriptions.length == 0) {
+    		$scope.inscriptions = false;
+    		$scope.noInscriptions = true;
+    	}
     };
 });
