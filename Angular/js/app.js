@@ -98,12 +98,12 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     	if (checkedButton !== undefined) {
     		var timesList; 
     		var courseCode = $scope.selectedCourse.code;
-    		for (var i = 0; i < $scope.courses[courseCode].cursos.length ; i++) {
-    			if ($scope.courses[courseCode].cursos[i].curso == checkedButton.id ){ 
-    				timesList = $scope.courses[courseCode].cursos[i].horarios;
-    				break;
+    		var id =  checkedButton.id
+    		angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
+    			if (course.curso == checkedButton.id ){ 
+    				timesList = course.horarios;
     			}
-    		}
+    		});
     		
         	this.userInscriptions.push ({
     		"code": courseCode, 
