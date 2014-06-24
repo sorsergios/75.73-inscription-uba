@@ -18,20 +18,20 @@
             <div class="row">
                 <div class="cell names">Créditos en obligatorias
                     comunes + Tesis o Trabajo Prof.:</div>
-                <div class="cell numbers">{{mandatoryCreditsSum}}</div>
+                <div class="cell numbers">{{mandatoryCreditsSum()}}</div>
                 <div class="cell">de</div>
                 <div class="cell numbers">{{mandatoryCreditsTotal + courses[selectedTesis].creditos}}</div>
             </div>
             <div class="row">
                 <div class="cell names">Créditos en obligatorias
                     orientación:</div>
-                <div class="cell numbers">{{mandatoryOrientedCreditsSum}}</div>
+                <div class="cell numbers">{{mandatoryOrientedCreditsSum()}}</div>
                 <div class="cell">de</div>
                 <div class="cell numbers">{{mandatoryOrientedCreditsTotal}}</div>
             </div>
             <div class="row">
                 <div class="cell names">Créditos en electivas:</div>
-                <div class="cell numbers">{{electedCreditsSum}}</div>
+                <div class="cell numbers">{{electedCreditsSum()}}</div>
                 <div class="cell">de</div>
                 <div class="cell numbers">{{electedCreditsTotal | addCredits:this }}</div>
             </div>

@@ -12,6 +12,12 @@ filters.filter('electedOrientation', function() {
     };
 });
 
+filters.filter('getCreds', function() {
+    return function(input, cond, defaultText) {
+        return 200;
+    };
+});
+
 filters.filter('addCredits', function() {
     return function(input, $scope) {
         var result = 0;

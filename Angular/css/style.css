@@ -25,7 +25,6 @@ header h1 {
 .info {
     border-right: 1px solid #0000FF;
     text-align: left;
-    white-space: nowrap;
     background-color: #007CFF;
     width: 250px;
     color: white;

@@ -12,29 +12,23 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
             'data': null,
             'next': null
     };
-    $scope.mandatoryCreditsSum = 0;
     $scope.mandatoryCreditsTotal = 0;
-    $scope.mandatoryOrientedCreditsSum = 0;
     $scope.mandatoryOrientedCreditsTotal = 34;
-    $scope.electedCreditsSum = 0;
     $scope.electedCreditsTotal = 34;
     
     $scope.selectedOrientation = 1;
     $scope.selectedTesis = "7500";
     $scope.tesisElection = ["7500", "7599"];
     
-    $http.get('data/user_1.json').success(function(data){
-        $scope.user = data;
-    });
     $http.get('data/inscriptions_1.json').success(function(data){
-    	if (data !== undefined) {
-    		$scope.inscriptions = true;
-    		$scope.noInscriptions = false;
-    		$scope.userInscriptions = data;
-    	} else {
-    		$scope.inscriptions = false;
-    		$scope.noInscriptions = true;
-    	}
+        if (data !== undefined) {
+            $scope.inscriptions = true;
+            $scope.noInscriptions = false;
+            $scope.userInscriptions = data;
+        } else {
+            $scope.inscriptions = false;
+            $scope.noInscriptions = true;
+        }
     });
     
     $http.get('data/next-courses.json').success(function(data){
@@ -43,11 +37,13 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     
     $scope.subjects = $http.get('data/subjects.json');
     $scope.courses = $http.get('data/courses.json');
+    $scope.user = $http.get('data/user_1.json');
     
-    $q.all([$scope.subjects,$scope.courses])
+    $q.all([$scope.subjects,$scope.courses, $scope.user])
         .then(function(arrayOfResults){
         $scope.subjects = arrayOfResults[0].data;
         $scope.courses = arrayOfResults[1].data;
+        $scope.user = arrayOfResults[2].data;
         angular.forEach($scope.subjects.obligatorias.content, function(subject, key) {
             angular.forEach(subject.assignatures, function(assignature, key2) {
                 if ($scope.tesisElection.indexOf(assignature) === -1) {
@@ -90,52 +86,109 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
     };
     
     $scope.checkedButton = function (courseList) {
-    	var select = undefined;
-    	angular.forEach(courseList, function(button, id) {
-			if (button.checked){ 
-				select = button;
-			}
-		});
-    	return select;
-    }
+        var select = undefined;
+        angular.forEach(courseList, function(button, id) {
+            if (button.checked){ 
+                select = button;
+            }
+        });
+        return select;
+    };
     
     $scope.register = function () {
-    	if (this.userInscriptions.length > 9) {
-    		alert ("No puede inscribirse a más de 10 materias por cuatrimestre!")
-    	} else {
-	    	var courseList = document.getElementsByName("idCourse");
-	    	var checkedButton = $scope.checkedButton(courseList);
-	    	if (checkedButton !== undefined) {
-	    		var timesList; 
-	    		var courseCode = $scope.selectedCourse.code;
-	    		angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
-	    			if (course.curso == checkedButton.id ){ 
-	    				timesList = course.horarios;
-	    			}
-	    		});
-	    		
-	        	this.userInscriptions.push ({
-	    		"code": courseCode, 
-	    		"course": checkedButton.id, 
-	    		"horarios": timesList
-	        	});
-	        	$scope.toggleModal ();    		
-	    	} else {
-	    		alert("Seleccione un curso a inscribirse!")
-	    	}
-	    	if (this.userInscriptions.length > 0) {
-	    		$scope.inscriptions = true;
-	    		$scope.noInscriptions = false;
-	    	}
-    	}
+        if (this.userInscriptions.length > 9) {
+            alert ("No puede inscribirse a más de 10 materias por cuatrimestre!");
+        } else {
+            var courseList = document.getElementsByName("idCourse");
+            var checkedButton = $scope.checkedButton(courseList);
+            if (checkedButton !== undefined) {
+                var timesList = null; 
+                var courseCode = $scope.selectedCourse.code;
+                angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
+                    if (course.curso == checkedButton.id ){ 
+                        timesList = course.horarios;
+                    }
+                });
+                
+                this.userInscriptions.push ({
+                    "code": courseCode, 
+                    "course": checkedButton.id, 
+                    "horarios": timesList
+                });
+                $scope.toggleModal ();            
+            } else {
+                alert("Seleccione un curso a inscribirse!");
+            }
+            if (this.userInscriptions.length > 0) {
+                $scope.inscriptions = true;
+                $scope.noInscriptions = false;
+            }
+        }
     };
     
     $scope.removeContact = function (contactToRemove) {
-    	var index = this.userInscriptions.indexOf(contactToRemove);
-    	this.userInscriptions.splice(index, 1);
-    	if (this.userInscriptions.length == 0) {
-    		$scope.inscriptions = false;
-    		$scope.noInscriptions = true;
-    	}
+        var index = this.userInscriptions.indexOf(contactToRemove);
+        this.userInscriptions.splice(index, 1);
+        if (this.userInscriptions.length == 0) {
+            $scope.inscriptions = false;
+            $scope.noInscriptions = true;
+        }
+    };
+
+    $scope.mandatoryCreditsSum = function () {
+        var sum = 0;
+        if ($scope.subjects.obligatorias !== undefined) {
+            angular.forEach($scope.subjects.obligatorias.content, function(subject, key) {
+                angular.forEach(subject.assignatures, function(assignature, key2) {
+                    if ($scope.user.subjects[assignature] !== undefined 
+                            && $scope.user.subjects[assignature].grade >= 4) {
+                        sum += $scope.user.subjects[assignature].grade;
+                    }
+                });
+            });
+        }
+        return sum;
+    };
+    
+    $scope.mandatoryOrientedCreditsSum = function () {
+        var sum = 0;
+        if ($scope.subjects.orientacion !== undefined) {
+            angular.forEach($scope.subjects.orientacion.content, function(subject, key) {
+                if (subject.id == $scope.selectedOrientation) {
+                    angular.forEach(subject.assignatures, function(assignature, key2) {
+                        if ($scope.user.subjects[assignature] !== undefined 
+                                && $scope.user.subjects[assignature].grade >= 4) {
+                            sum += $scope.user.subjects[assignature].grade;
+                        }
+                    });
+                }
+            });
+        }
+        return sum;
+    };
+    
+    $scope.electedCreditsSum = function () {
+        var sum = 0;
+        if ($scope.subjects.orientacion !== undefined) {
+            angular.forEach($scope.subjects.orientacion.content, function(subject, key) {
+                if (subject.id != $scope.selectedOrientation) {
+                    angular.forEach(subject.assignatures, function(assignature, key2) {
+                        if ($scope.user.subjects[assignature] !== undefined 
+                                && $scope.user.subjects[assignature].grade >= 4) {
+                            sum += $scope.user.subjects[assignature].grade;
+                        }
+                    });
+                }
+            });
+            angular.forEach($scope.subjects.electivas.content, function(subject, key) {
+                angular.forEach(subject.assignatures, function(assignature, key2) {
+                    if ($scope.user.subjects[assignature] !== undefined 
+                            && $scope.user.subjects[assignature].grade >= 4) {
+                        sum += $scope.user.subjects[assignature].grade;
+                    }
+                });
+            });
+        }
+        return sum;
     };
 });
