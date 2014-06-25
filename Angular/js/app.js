@@ -213,7 +213,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     };
 
     $scope.percentage = function () {
-        var percent =  $window.Math.round((100 * $scope.creditsObtained()) / 248);
+        var percent =  ($window.Math.round((100 * $scope.creditsObtained()) * 100 / 248)) / 100;
         return percent;
     };
 
@@ -225,7 +225,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
 		        sum += $scope.user.subjects[key].grade;
 		    }
 		});
-        var avg =  $window.Math.round(sum / $scope.subjectsApproved());
+        var avg =  ($window.Math.round(sum * 100 / $scope.subjectsApproved()))/100;
         return avg;
     };
 });
