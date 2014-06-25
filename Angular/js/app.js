@@ -7,6 +7,7 @@ var systemApp = angular.module('systemApp', ['systemFilters']);
 systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     
     $scope.activeModal = false;
+    $scope.itineraryModal = false;
     $scope.selectedCourse = {
             'code': null,
             'data': null,
@@ -21,14 +22,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     $scope.tesisElection = ["7500", "7599"];
     
     $http.get('data/inscriptions_1.json').success(function(data){
-        if (data !== undefined) {
-            $scope.inscriptions = true;
-            $scope.noInscriptions = false;
-            $scope.userInscriptions = data;
-        } else {
-            $scope.inscriptions = false;
-            $scope.noInscriptions = true;
-        }
+        $scope.userInscriptions = data;
     });
     
     $http.get('data/next-courses.json').success(function(data){
@@ -67,11 +61,29 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     };
     
     $scope.toggleModal = function() {
-        $scope.activeModal = !$scope.activeModal;
+        $scope.activeModal = false;
+        $scope.itineraryModal = false;
+        $scope.gradeModal = false;
+    };
+
+    $scope.openGradeModal = function(assignature) {
+        $scope.activeModal = true;
+        $scope.gradeModal = true;
+        $scope.selectedAssignature = assignature;
+        if ($scope.user.subjects !== undefined
+                && !$scope.user.subjects.hasOwnProperty(assignature)) {
+            $scope.user.subjects[assignature] = {'grade' : null};
+        }
+    };
+
+    $scope.saveGrade = function() {
+        $scope.activeModal = false;
+        $scope.gradeModal = false;
     };
     
-    $scope.openModal = function(assignature) {
-        $scope.toggleModal();
+    $scope.openItineraryModal = function(assignature) {
+        $scope.activeModal = true;
+        $scope.itineraryModal = true;
         if ($scope.courses !== undefined
                 && $scope.courses.hasOwnProperty(assignature)) {
             $scope.selectedCourse.code = assignature;
@@ -195,8 +207,8 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     $scope.creditsObtained = function () {
         var sum = 0;
         if ($scope.user !== undefined) {
-         	angular.forEach($scope.user.subjects, function(subject, key) {
-       			sum += $scope.courses[key].creditos;
+            angular.forEach($scope.user.subjects, function(subject, key) {
+                sum += $scope.courses[key].creditos;
             });
         }
         return sum;
@@ -205,8 +217,8 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     $scope.subjectsApproved = function () {
         var sum = 0;
         if ($scope.user !== undefined) {
-         	angular.forEach($scope.user.subjects, function(subject, key) {
-       			sum += 1;
+            angular.forEach($scope.user.subjects, function(subject, key) {
+                sum += 1;
             });
         }
         return sum;
@@ -218,13 +230,13 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     };
 
     $scope.average = function () {
-    	var sum = 0;
-		angular.forEach($scope.user.subjects, function(assignature, key) {
-		    if ($scope.user.subjects[key] !== undefined 
-		            && $scope.user.subjects[key].grade >= 4) {
-		        sum += $scope.user.subjects[key].grade;
-		    }
-		});
+        var sum = 0;
+        angular.forEach($scope.user.subjects, function(assignature, key) {
+            if ($scope.user.subjects[key] !== undefined 
+                    && $scope.user.subjects[key].grade >= 4) {
+                sum += $scope.user.subjects[key].grade;
+            }
+        });
         var avg =  ($window.Math.round(sum * 100 / $scope.subjectsApproved()))/100;
         return avg;
     };

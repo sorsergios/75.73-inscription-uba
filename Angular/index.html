@@ -59,7 +59,7 @@
                 {{selectedCourse.data.nombre}}</h3>
             <div class="courses">
                 <div class="row header">
-                	<div class="cell "></div>
+                    <div class="cell "></div>
                     <div class="cell id">CURSOS</div>
                     <div class="cell vacancy">VACANTES</div>
                     <div class="cell profesor">PROFESORES</div>
@@ -78,33 +78,35 @@
             </div>
             <br>
             <div class="modal-footer">
-               	<a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
-               	<a href="#" class="btn" ng-click="register()">Inscribir</a>
-			</div>
-			<br>
+                <a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
+                <a href="#" class="btn" ng-click="register()">Inscribir</a>
+            </div>
+            <br>
         </div>
     </div>
     <div class="content">
         <div class="content-row">
             <div class="column info">
-            	<div>
-                	<div class="cell numbers">Créditos obtenidos: {{creditsObtained()}} </div>
-                	<div class="cell numbers">Materias aprobadas: {{subjectsApproved()}} </div>
-                	<div class="cell numbers">Porcentaje aprobado:  {{percentage()}} %</div>
-                	<div class="cell numbers">Promedio FIUBA:  {{average()}} %</div>
-            	</div>
+                <div>
+                    <div class="cell numbers">Créditos obtenidos: {{creditsObtained()}} </div>
+                    <div class="cell numbers">Materias aprobadas: {{subjectsApproved()}} </div>
+                    <div class="cell numbers">Porcentaje aprobado:  {{percentage()}} %</div>
+                    <div class="cell numbers">Promedio FIUBA:  {{average()}} %</div>
+                </div>
                 <h4 ng-show="inscriptions" class="centrar" >Usted está inscripto a:</h4>
                 <div ng-show="inscriptions" class="inscripto">
+                <h4 ng-show="userInscriptions.length > 0" class="centrar" >Usted está inscripto a:</h4>
+                <div ng-show="userInscriptions.length > 0" class="inscripto">
                     <div ng-repeat="inscription in userInscriptions">
                         <h5 style="text-align: left;">{{inscription.code}} - {{courses[inscription.code].nombre}}</h5>
                         <ul class="times">
                             <li ng-repeat="times in inscription.horarios">{{times}}</li>
                         </ul>
-                     	<a href="#" class="btn" ng-click="removeContact(inscription)">Eliminar</a>
+                         <a href="#" class="btn" ng-click="removeContact(inscription)">Eliminar</a>
                     </div>
                 </div>
                 <div ng-show="noInscriptions">
-                	<h4 class="centrar" >Seleccione una materia<br/> para inscribirse</h4>
+                    <h4 class="centrar" >Seleccione una materia<br/> para inscribirse</h4>
                 </div>
             </div>
             <div class="column inner-content">
