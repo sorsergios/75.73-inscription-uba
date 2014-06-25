@@ -4,7 +4,7 @@
 
 var systemApp = angular.module('systemApp', ['systemFilters']);
 
-systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
+systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     
     $scope.activeModal = false;
     $scope.selectedCourse = {
@@ -190,5 +190,42 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q) {
             });
         }
         return sum;
+    };
+    
+    $scope.creditsObtained = function () {
+        var sum = 0;
+        if ($scope.user !== undefined) {
+         	angular.forEach($scope.user.subjects, function(subject, key) {
+       			sum += $scope.courses[key].creditos;
+            });
+        }
+        return sum;
+    };
+    
+    $scope.subjectsApproved = function () {
+        var sum = 0;
+        if ($scope.user !== undefined) {
+         	angular.forEach($scope.user.subjects, function(subject, key) {
+       			sum += 1;
+            });
+        }
+        return sum;
+    };
+
+    $scope.percentage = function () {
+        var percent =  $window.Math.round((100 * $scope.creditsObtained()) / 248);
+        return percent;
+    };
+
+    $scope.average = function () {
+    	var sum = 0;
+		angular.forEach($scope.user.subjects, function(assignature, key) {
+		    if ($scope.user.subjects[key] !== undefined 
+		            && $scope.user.subjects[key].grade >= 4) {
+		        sum += $scope.user.subjects[key].grade;
+		    }
+		});
+        var avg =  $window.Math.round(sum / $scope.subjectsApproved());
+        return avg;
     };
 });

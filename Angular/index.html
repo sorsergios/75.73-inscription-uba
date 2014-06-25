@@ -87,6 +87,12 @@
     <div class="content">
         <div class="content-row">
             <div class="column info">
+            	<div>
+                	<div class="cell numbers">Créditos obtenidos: {{creditsObtained()}} </div>
+                	<div class="cell numbers">Materias aprobadas: {{subjectsApproved()}} </div>
+                	<div class="cell numbers">Porcentaje aprobado:  {{percentage()}} %</div>
+                	<div class="cell numbers">Promedio FIUBA:  {{average()}} %</div>
+            	</div>
                 <h4 ng-show="inscriptions" class="centrar" >Usted está inscripto a:</h4>
                 <div ng-show="inscriptions" class="inscripto">
                     <div ng-repeat="inscription in userInscriptions">
