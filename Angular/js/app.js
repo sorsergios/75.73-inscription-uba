@@ -8,6 +8,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     
     $scope.activeModal = false;
     $scope.itineraryModal = false;
+    $scope.gradeModal = false;
     $scope.selectedCourse = {
             'code': null,
             'data': null,

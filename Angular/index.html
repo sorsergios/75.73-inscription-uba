@@ -53,7 +53,27 @@
         </div>
     </header>
     <div class="overlay" ng-show="activeModal">
-        <div class="coursesModal">
+        <div class="coursesModal" ng-show="gradeModal">
+            <a class="close" href="#" ng-click="toggleModal()">x</a>
+            <h3>Nota de {{selectedAssignature}}</h3>
+            <div class="courses">
+                <ul class="grades">
+                    <li class="grade" ng-repeat="grade in ['MAL', 4,5,6,7,8,9,10]">
+                        <input id="grade-{{grade}}" 
+                            ng-Model="user.subjects[selectedAssignature].grade"
+                            ng-value="{{grade}}"
+                            name="grade" 
+                            type="radio" />
+                        <label for="grade-{{grade}}">{{grade}}</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
+                <a href="#" class="btn" ng-click="saveGrade()">Inscribir</a>
+            </div>
+        </div>
+        <div class="coursesModal" ng-show="itineraryModal">
             <a class="close" href="#" ng-click="toggleModal()">x</a>
             <h3>{{selectedCourse.code}} -
                 {{selectedCourse.data.nombre}}</h3>
@@ -76,12 +96,10 @@
                     </ul>
                 </div>
             </div>
-            <br>
             <div class="modal-footer">
                 <a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
                 <a href="#" class="btn" ng-click="register()">Inscribir</a>
             </div>
-            <br>
         </div>
     </div>
     <div class="content">
@@ -93,8 +111,6 @@
                     <div class="cell numbers">Porcentaje aprobado:  {{percentage()}} %</div>
                     <div class="cell numbers">Promedio FIUBA:  {{average()}} %</div>
                 </div>
-                <h4 ng-show="inscriptions" class="centrar" >Usted está inscripto a:</h4>
-                <div ng-show="inscriptions" class="inscripto">
                 <h4 ng-show="userInscriptions.length > 0" class="centrar" >Usted está inscripto a:</h4>
                 <div ng-show="userInscriptions.length > 0" class="inscripto">
                     <div ng-repeat="inscription in userInscriptions">
@@ -123,11 +139,12 @@
                             ng-show="isSelectedTesis(assignature)">
                             <div class="name">{{assignature}} - {{courses[assignature].nombre}}</div>
                             <button class="buttons"
-                                ng-click="openModal(assignature)"
+                                ng-click="openItineraryModal(assignature)"
                                 ng-hide="user.subjects[assignature].grade >= 4">
                                 Horarios
                             </button>
-                            <button class="buttons">
+                            <button class="buttons"
+                                ng-click="openGradeModal(assignature)">
                                 {{user.subjects[assignature].grade | coalesce : 'Nota'}}
                             </button>
                         </dd>
