@@ -113,7 +113,7 @@
                     <div>Créditos obtenidos: {{creditsObtained()}} </div>
                     <div>Materias aprobadas: {{subjectsApproved()}} </div>
                     <div>Porcentaje aprobado:  {{creditsObtained() / 248 * 100 | number: 2}}%</div>
-                    <div>Promedio FIUBA:  {{totalGrades() / subjectsApproved() | number: 2}}%</div>
+                    <div>Promedio FIUBA:  {{totalGrades() / subjectsApproved() | number: 2}}</div>
                 </div>
                 <h4 ng-show="!isEmpty(userInscriptions)" class="centrar" >Usted está inscripto a:</h4>
                 <div ng-show="!isEmpty(userInscriptions)" class="inscripto">
