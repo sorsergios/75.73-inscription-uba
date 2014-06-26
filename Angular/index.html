@@ -105,11 +105,11 @@
     <div class="content">
         <div class="content-row">
             <div class="column info">
-                <div>
-                    <div class="cell numbers">Créditos obtenidos: {{creditsObtained()}} </div>
-                    <div class="cell numbers">Materias aprobadas: {{subjectsApproved()}} </div>
-                    <div class="cell numbers">Porcentaje aprobado:  {{percentage()}} %</div>
-                    <div class="cell numbers">Promedio FIUBA:  {{average()}} %</div>
+                <div class="resume">
+                    <div>Créditos obtenidos: {{creditsObtained()}} </div>
+                    <div>Materias aprobadas: {{subjectsApproved()}} </div>
+                    <div>Porcentaje aprobado:  {{creditsObtained() / 248 * 100 | number: 2}}%</div>
+                    <div>Promedio FIUBA:  {{totalGrades() / subjectsApproved() | number: 2}}%</div>
                 </div>
                 <h4 ng-show="userInscriptions.length > 0" class="centrar" >Usted está inscripto a:</h4>
                 <div ng-show="userInscriptions.length > 0" class="inscripto">

@@ -209,7 +209,10 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
         var sum = 0;
         if ($scope.user !== undefined) {
             angular.forEach($scope.user.subjects, function(subject, key) {
-                sum += $scope.courses[key].creditos;
+                if (subject !== undefined 
+                        && subject.grade >= 4) {
+                    sum += $scope.courses[key].creditos;
+                }
             });
         }
         return sum;
@@ -219,26 +222,23 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
         var sum = 0;
         if ($scope.user !== undefined) {
             angular.forEach($scope.user.subjects, function(subject, key) {
-                sum += 1;
+                if (subject !== undefined 
+                        && subject.grade >= 4) {
+                    sum++;
+                }
             });
         }
         return sum;
     };
 
-    $scope.percentage = function () {
-        var percent =  ($window.Math.round((100 * $scope.creditsObtained()) * 100 / 248)) / 100;
-        return percent;
-    };
-
-    $scope.average = function () {
+    $scope.totalGrades = function () {
         var sum = 0;
         angular.forEach($scope.user.subjects, function(assignature, key) {
-            if ($scope.user.subjects[key] !== undefined 
-                    && $scope.user.subjects[key].grade >= 4) {
-                sum += $scope.user.subjects[key].grade;
+            if (assignature !== undefined 
+                    && assignature.grade >= 4) {
+                sum += assignature.grade;
             }
         });
-        var avg =  ($window.Math.round(sum * 100 / $scope.subjectsApproved()))/100;
-        return avg;
+        return sum;
     };
 });
