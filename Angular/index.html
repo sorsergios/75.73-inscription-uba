@@ -60,7 +60,7 @@
                 <ul class="grades">
                     <li class="grade" ng-repeat="grade in ['MAL', 4,5,6,7,8,9,10]">
                         <input id="grade-{{grade}}" 
-                            ng-Model="user.subjects[selectedAssignature].grade"
+                            ng-model="user.subjects[selectedAssignature].grade"
                             ng-value="{{grade}}"
                             name="grade" 
                             type="radio" />
@@ -70,7 +70,6 @@
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn" ng-click="toggleModal()">Cerrar</a>
-                <a href="#" class="btn" ng-click="saveGrade()">Inscribir</a>
             </div>
         </div>
         <div class="coursesModal" ng-show="itineraryModal">
@@ -85,14 +84,19 @@
                     <div class="cell profesor">PROFESORES</div>
                     <div class="cell times">HORARIOS</div>
                 </div>
-                <div ng-repeat="courses in selectedCourse.data.cursos"
-                    class="row">
-                    <div class="cell "><input type="radio" name="idCourse" id={{courses.curso}}></div>
-                    <div class="cell id">{{courses.curso}}</div>
-                    <div class="cell vacancy">{{courses.vacantes}}</div>
-                    <div class="cell profesor">{{courses.profesor}}</div>
+                <div ng-repeat="cursos in selectedCourse.data.cursos" class="row">
+                    <div class="cell">
+                        <input type="radio" 
+                            name="idCourse" 
+                            ng-model="selectedCourse.course"
+                            ng-value="$index"
+                            ng-checked="{{userInscriptions[selectedCourse.code].course == cursos.curso}}" >
+                    </div>
+                    <div class="cell id">{{cursos.curso}}</div>
+                    <div class="cell vacancy">{{cursos.vacantes}}</div>
+                    <div class="cell profesor">{{cursos.profesor}}</div>
                     <ul class="cell times">
-                        <li ng-repeat="times in courses.horarios">{{times}}</li>
+                        <li ng-repeat="times in cursos.horarios">{{times}}</li>
                     </ul>
                 </div>
             </div>
@@ -104,24 +108,25 @@
     </div>
     <div class="content">
         <div class="content-row">
-            <div class="column info">
+            <div class="column first-column">
                 <div class="resume">
                     <div>Créditos obtenidos: {{creditsObtained()}} </div>
                     <div>Materias aprobadas: {{subjectsApproved()}} </div>
                     <div>Porcentaje aprobado:  {{creditsObtained() / 248 * 100 | number: 2}}%</div>
                     <div>Promedio FIUBA:  {{totalGrades() / subjectsApproved() | number: 2}}%</div>
                 </div>
-                <h4 ng-show="userInscriptions.length > 0" class="centrar" >Usted está inscripto a:</h4>
-                <div ng-show="userInscriptions.length > 0" class="inscripto">
-                    <div ng-repeat="inscription in userInscriptions">
+                <h4 ng-show="!isEmpty(userInscriptions)" class="centrar" >Usted está inscripto a:</h4>
+                <div ng-show="!isEmpty(userInscriptions)" class="inscripto">
+                    <div class="assign" ng-repeat="inscription in userInscriptions track by $index">
                         <h5 style="text-align: left;">{{inscription.code}} - {{courses[inscription.code].nombre}}</h5>
                         <ul class="times">
                             <li ng-repeat="times in inscription.horarios">{{times}}</li>
                         </ul>
-                         <a href="#" class="btn" ng-click="removeContact(inscription)">Eliminar</a>
+                        <a href="#" class="btn" ng-click="removeContact(inscription.code)">Eliminar</a>
+                        <a href="#" class="btn" ng-click="openItineraryModal(inscription.code)">Cambiar</a>
                     </div>
                 </div>
-                <div ng-show="noInscriptions">
+                <div ng-show="isEmpty(userInscriptions)">
                     <h4 class="centrar" >Seleccione una materia<br/> para inscribirse</h4>
                 </div>
             </div>

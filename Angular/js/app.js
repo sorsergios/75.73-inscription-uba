@@ -10,9 +10,10 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     $scope.itineraryModal = false;
     $scope.gradeModal = false;
     $scope.selectedCourse = {
-            'code': null,
-            'data': null,
-            'next': null
+        'code': null,
+        'data': null,
+        'next': null,
+        'course': null
     };
     $scope.mandatoryCreditsTotal = 0;
     $scope.mandatoryOrientedCreditsTotal = 34;
@@ -89,6 +90,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                 && $scope.courses.hasOwnProperty(assignature)) {
             $scope.selectedCourse.code = assignature;
             $scope.selectedCourse.data = $scope.courses[assignature];
+            $scope.selectedCourse.course = null;
             if ($scope.nextCourses !== undefined
                     && $scope.nextCourses.hasOwnProperty(assignature)) {
                 $scope.selectedCourse.next = $scope.nextCourses[assignature];
@@ -98,54 +100,27 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
         }
     };
     
-    $scope.checkedButton = function (courseList) {
-        var select = undefined;
-        angular.forEach(courseList, function(button, id) {
-            if (button.checked){ 
-                select = button;
-            }
-        });
-        return select;
-    };
-    
     $scope.register = function () {
-        if (this.userInscriptions.length > 9) {
+        if ($scope.userInscriptions.length > 9) {
             alert ("No puede inscribirse a más de 10 materias por cuatrimestre!");
         } else {
-            var courseList = document.getElementsByName("idCourse");
-            var checkedButton = $scope.checkedButton(courseList);
-            if (checkedButton !== undefined) {
-                var timesList = null; 
-                var courseCode = $scope.selectedCourse.code;
-                angular.forEach($scope.courses[courseCode].cursos, function(course, id) {
-                    if (course.curso == checkedButton.id ){ 
-                        timesList = course.horarios;
-                    }
-                });
-                
-                this.userInscriptions.push ({
-                    "code": courseCode, 
-                    "course": checkedButton.id, 
-                    "horarios": timesList
-                });
-                $scope.toggleModal ();            
+            if ($scope.selectedCourse.course != null) {
+                $scope.toggleModal ();
+                var curso = $scope.selectedCourse.data.cursos[$scope.selectedCourse.course],
+                    inscription = {
+                        "code": $scope.selectedCourse.code, 
+                        "course": curso.curso, 
+                        "horarios": curso.horarios
+                    };
+                $scope.userInscriptions[inscription.code] = inscription;
             } else {
                 alert("Seleccione un curso a inscribirse!");
-            }
-            if (this.userInscriptions.length > 0) {
-                $scope.inscriptions = true;
-                $scope.noInscriptions = false;
             }
         }
     };
     
     $scope.removeContact = function (contactToRemove) {
-        var index = this.userInscriptions.indexOf(contactToRemove);
-        this.userInscriptions.splice(index, 1);
-        if (this.userInscriptions.length == 0) {
-            $scope.inscriptions = false;
-            $scope.noInscriptions = true;
-        }
+        delete this.userInscriptions[contactToRemove];
     };
 
     $scope.mandatoryCreditsSum = function () {
@@ -155,7 +130,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                 angular.forEach(subject.assignatures, function(assignature, key2) {
                     if ($scope.user.subjects[assignature] !== undefined 
                             && $scope.user.subjects[assignature].grade >= 4) {
-                        sum += $scope.user.subjects[assignature].grade;
+                        sum += $scope.courses[assignature].creditos;
                     }
                 });
             });
@@ -171,7 +146,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                     angular.forEach(subject.assignatures, function(assignature, key2) {
                         if ($scope.user.subjects[assignature] !== undefined 
                                 && $scope.user.subjects[assignature].grade >= 4) {
-                            sum += $scope.user.subjects[assignature].grade;
+                            sum += $scope.courses[assignature].creditos;
                         }
                     });
                 }
@@ -188,7 +163,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                     angular.forEach(subject.assignatures, function(assignature, key2) {
                         if ($scope.user.subjects[assignature] !== undefined 
                                 && $scope.user.subjects[assignature].grade >= 4) {
-                            sum += $scope.user.subjects[assignature].grade;
+                            sum += $scope.courses[assignature].creditos;
                         }
                     });
                 }
@@ -197,7 +172,7 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                 angular.forEach(subject.assignatures, function(assignature, key2) {
                     if ($scope.user.subjects[assignature] !== undefined 
                             && $scope.user.subjects[assignature].grade >= 4) {
-                        sum += $scope.user.subjects[assignature].grade;
+                        sum += $scope.courses[assignature].creditos;
                     }
                 });
             });
@@ -240,5 +215,12 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
             }
         });
         return sum;
+    };
+    
+    $scope.isEmpty = function (obj) {
+        for (var i in obj) {
+            if (obj.hasOwnProperty(i)) return false;
+        }
+        return true;
     };
 });

@@ -1133,12 +1133,12 @@
 		"nombre": "FISICA III D", 
 		"creditos": 4, 
 		"cursos": [{
-				"horarios": ["T martes 18:00 20:00 PC-211B P miercoles 18:00 20:00 PC-203"], 
+				"horarios": ["T martes 18:00 20:00 PC-211B", "P miercoles 18:00 20:00 PC-203"], 
 				"profesor": "AGUIRRE-CONDE GARRIDO-MALMORIA-ROCC", 
 				"curso": "1", 
 				"vacantes": 20
 			}, {
-				"horarios": ["T miercoles 14:00 16:00 PC-203 P miercoles 16:00 18:00 PC-203"], 
+				"horarios": ["T miercoles 14:00 16:00 PC-203", "P miercoles 16:00 18:00 PC-203"], 
 				"profesor": "ARCONDO-CONDE GARRIDO-MALMORIA-ROCC", 
 				"curso": "2", 
 				"vacantes": 20
@@ -3420,7 +3420,7 @@
 		"nombre": "VIDEO Y REDES DE CABLE", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T miercoles 10:00 13:00 PC-L15 P viernes 10:00 13:00 PC-L15"], 
+				"horarios": ["T miercoles 10:00 13:00 PC-L15", "P viernes 10:00 13:00 PC-L15"], 
 				"profesor": "GROSSI", 
 				"curso": "1", 
 				"vacantes": 20
@@ -4411,7 +4411,7 @@
 		"nombre": "MECANICA APLICADA", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T lunes 16:00 19:00 PC-211C P miercoles 16:00 19:00 PC-211C"], 
+				"horarios": ["T lunes 16:00 19:00 PC-211C", "P miercoles 16:00 19:00 PC-211C"], 
 				"profesor": "MOKANIUK", 
 				"curso": "001", 
 				"vacantes": 20
@@ -4786,7 +4786,7 @@
 				"curso": "001", 
 				"vacantes": 20
 			}, {
-				"horarios": ["T martes 15:00 17:00 PC-200", "T jueves 15:00 17:00 PC-414 P viernes 18:00 22:00 PC-303"], 
+				"horarios": ["T martes 15:00 17:00 PC-200", "T jueves 15:00 17:00 PC-414", "P viernes 18:00 22:00 PC-303"], 
 				"profesor": "PORCELLANA-PORCELLANA", 
 				"curso": "002", 
 				"vacantes": 20
@@ -5024,7 +5024,7 @@
 		"nombre": "INGENIERÍA SANITARIA", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T martes 16:00 19:00 LH-203 P jueves 16:00 19:00 LH-203"], 
+				"horarios": ["T martes 16:00 19:00 LH-203", "P jueves 16:00 19:00 LH-203"], 
 				"profesor": "BURGELL-BERRILIO-GAVAZZO-LUENGOS VI", 
 				"curso": "1", 
 				"vacantes": 20
@@ -5082,7 +5082,7 @@
 		"nombre": "MODELOS HIDRAULICOS", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T lunes 14:00 17:00 LH-311 P miercoles 14:00 17:00 LH-311"], 
+				"horarios": ["T lunes 14:00 17:00 LH-311", "P miercoles 14:00 17:00 LH-311"], 
 				"profesor": "HOPWOOD", 
 				"curso": "01", 
 				"vacantes": 20
@@ -5093,7 +5093,7 @@
 		"nombre": "HIDROLOGIA", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T martes 19:00 21:00 LH-308 P jueves 19:00 23:00 LH-308"], 
+				"horarios": ["T martes 19:00 21:00 LH-308", "P jueves 19:00 23:00 LH-308"], 
 				"profesor": "SEOANE-URIBURU", 
 				"curso": "1", 
 				"vacantes": 20
@@ -5192,7 +5192,7 @@
 		"nombre": "HIDRÁULICA FLUVIAL", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T lunes 15:00 17:00 LH-311 P miercoles 17:00 19:00 LH-302"], 
+				"horarios": ["T lunes 15:00 17:00 LH-311", "P miercoles 17:00 19:00 LH-302"], 
 				"profesor": "HOPWOOD", 
 				"curso": "1", 
 				"vacantes": 20
@@ -6135,7 +6135,7 @@
 		"nombre": "CONSTRUCCION NAVAL III", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["TO miercoles 18:00 21:00 PC-413 P viernes 17:00 21:00 PC-512"], 
+				"horarios": ["TO miercoles 18:00 21:00 PC-413", "P viernes 17:00 21:00 PC-512"], 
 				"profesor": "GARCIA MORENO", 
 				"curso": "1", 
 				"vacantes": 20
@@ -6517,12 +6517,12 @@
 		"nombre": "COMPUTACION", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["TO viernes 17:00 19:00 PC-107 P viernes 19:00 21:00 PC-107"], 
+				"horarios": ["TO viernes 17:00 19:00 PC-107", "P viernes 19:00 21:00 PC-107"], 
 				"profesor": "STROBINO-VALVERDE-HID-LANDINO", 
 				"curso": "01", 
 				"vacantes": 20
 			}, {
-				"horarios": ["TO viernes 19:00 21:00 PC-414 P viernes 21:00 23:00 PC-414"], 
+				"horarios": ["TO viernes 19:00 21:00 PC-414", "P viernes 21:00 23:00 PC-414"], 
 				"profesor": "BURIN ABRAHAM-NOVODVORETZ-GUTIERREZ", 
 				"curso": "02", 
 				"vacantes": 20
@@ -6583,7 +6583,7 @@
 				"curso": "1", 
 				"vacantes": 20
 			}, {
-				"horarios": ["TO lunes 10:00 14:00 PC-414 P miercoles 19:00 23:00 PC-LE"], 
+				"horarios": ["TO lunes 10:00 14:00 PC-414", "P miercoles 19:00 23:00 PC-LE"], 
 				"profesor": "KUHN-FERRIGNO", 
 				"curso": "2", 
 				"vacantes": 20
@@ -6847,7 +6847,7 @@
 		"nombre": "BASE DE DATOS B", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T miercoles 16:00 19:00 PC-200 P miercoles 19:00 22:00 PC-200"], 
+				"horarios": ["T miercoles 16:00 19:00 PC-200", "P miercoles 19:00 22:00 PC-200"], 
 				"profesor": "ALE-DEJEAN-FASCE-FULCO-ROMAN", 
 				"curso": "1", 
 				"vacantes": 20
@@ -6858,7 +6858,7 @@
 		"nombre": "TEORÍA DE ALGORITMOS I", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T miercoles 16:00 19:00 PC-200 P miercoles 19:00 22:00 PC-200"], 
+				"horarios": ["T miercoles 16:00 19:00 PC-200", "P miercoles 19:00 22:00 PC-200"], 
 				"profesor": "ALE-DEJEAN-FASCE-FULCO-ROMAN", 
 				"curso": "1", 
 				"vacantes": 20
@@ -6869,7 +6869,7 @@
 		"nombre": "TEORÍA DE ALGORITMOS II", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T miercoles 16:00 19:00 PC-200 P miercoles 19:00 22:00 PC-200"], 
+				"horarios": ["T miercoles 16:00 19:00 PC-200", "P miercoles 19:00 22:00 PC-200"], 
 				"profesor": "ALE-DEJEAN-FASCE-FULCO-ROMAN", 
 				"curso": "1", 
 				"vacantes": 20
@@ -6891,7 +6891,7 @@
 		"nombre": "REDES Y TELEPROCESAMIENTOS I", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T martes 19:00 22:00 PC-503 P viernes 19:00 22:00 PC-201"], 
+				"horarios": ["T martes 19:00 22:00 PC-503", "P viernes 19:00 22:00 PC-201"], 
 				"profesor": "BERNARDEZ-BEIRO-FRYMER", 
 				"curso": "1", 
 				"vacantes": 20
@@ -6981,7 +6981,7 @@
 				"curso": "1", 
 				"vacantes": 20
 			}, {
-				"horarios": ["T miercoles 19:00 21:00 PC-411 P miercoles 21:00 23:00 PC-411"], 
+				"horarios": ["T miercoles 19:00 21:00 PC-411", "P miercoles 21:00 23:00 PC-411"], 
 				"profesor": "AZCURRA-GRANDE-ESPINA", 
 				"curso": "2", 
 				"vacantes": 20
@@ -6992,7 +6992,7 @@
 		"nombre": "INTRODUCCÓN A LOS SISTEMAS DISTRIBUIDOS", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T martes 19:00 22:00 PC-LF P viernes 19:00 22:00 PC-201"], 
+				"horarios": ["T martes 19:00 22:00 PC-LF", "P viernes 19:00 22:00 PC-201"], 
 				"profesor": "BERNARDEZ-BEIRO-FRYMER", 
 				"curso": "1", 
 				"vacantes": 20
@@ -7025,7 +7025,7 @@
 		"nombre": "ADM. Y CONTROL DE PROY. INFORMÁTICOS II", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["T jueves 08:30 11:30 PC-402 P jueves 19:00 22:00 PC-509"], 
+				"horarios": ["T jueves 08:30 11:30 PC-402", "P jueves 19:00 22:00 PC-509"], 
 				"profesor": "MARTINEZ-GABARDINI-FERNANDEZ", 
 				"curso": "1", 
 				"vacantes": 20
@@ -7347,7 +7347,7 @@
 		"nombre": "COMPUTACION", 
 		"creditos": 6, 
 		"cursos": [{
-				"horarios": ["TO viernes 17:00 19:00 PC-107 P viernes 19:00 21:00 PC-107"], 
+				"horarios": ["TO viernes 17:00 19:00 PC-107", "P viernes 19:00 21:00 PC-107"], 
 				"profesor": "STROBINO-VALVERDE-HID-LANDINO", 
 				"curso": "01", 
 				"vacantes": 20
@@ -7397,7 +7397,7 @@
 				"curso": "10", 
 				"vacantes": 20
 			}, {
-				"horarios": ["TO miercoles 08:00 10:00 PC-416 P miercoles 10:00 12:00 PC-416"], 
+				"horarios": ["TO miercoles 08:00 10:00 PC-416", "P miercoles 10:00 12:00 PC-416"], 
 				"profesor": "LAGE-MENDEZ-COSTA", 
 				"curso": "11", 
 				"vacantes": 20

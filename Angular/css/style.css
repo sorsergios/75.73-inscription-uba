@@ -35,6 +35,15 @@ header h1 {
     padding: 5px 20px;
     color: white;
 }
+.inscripto .assign a {
+    display: none;
+    padding: 5px;
+    color: white;
+}
+.inscripto .assign:hover a {
+    display: inline-block;
+}
+
 .info a.active,
 .info a:hover {
     color: white;
@@ -267,6 +276,7 @@ dd:hover .buttons {
     list-style: none;
     padding: 0;
     font-size: 85%;
+    text-align: left;
 }
 
 .inscripto h5 {
@@ -287,7 +297,14 @@ dd:hover .buttons {
     width:100px;
     text-decoration:none;
     text-align:center;
-        border-radius: 6px;
+    border-radius: 6px;
+}
+.inscripto .btn {
+    height: auto;
+    line-height: auto;
+    width: 80px;
+    border-radius: 6px;
+
 }
 .btn:hover {
     background:-moz-linear-gradient( center top, #4197ee 5%, #007CFF 100% );
@@ -321,4 +338,8 @@ dd:hover .buttons {
 }
 .resume {
     margin: 0 0 0 30px;
+    text-align: left;
+}
+.first-column {
+    width: 250px;
 }
