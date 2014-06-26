@@ -112,7 +112,13 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                         "course": curso.curso, 
                         "horarios": curso.horarios
                     };
+                if ($scope.userInscriptions !== undefined
+                        && $scope.userInscriptions.hasOwnProperty(inscription.code)
+                        && !confirm("Se va a cambiar la inscripción a " + inscription.code  + ",\n Desea Continuar?")) {
+                    return;
+                }
                 $scope.userInscriptions[inscription.code] = inscription;
+                
             } else {
                 alert("Seleccione un curso a inscribirse!");
             }
@@ -120,7 +126,9 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     };
     
     $scope.removeContact = function (contactToRemove) {
-        delete this.userInscriptions[contactToRemove];
+        if (confirm("Desea eliminar la inscripción a " + contactToRemove)) {
+            delete this.userInscriptions[contactToRemove];
+        }
     };
 
     $scope.mandatoryCreditsSum = function () {
