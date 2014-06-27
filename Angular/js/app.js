@@ -226,6 +226,10 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     };
 
     $scope.isEmpty = function (obj) {
-        return Object.keys(obj).length == 0;
+        if (obj != undefined) {
+            return Object.keys(obj).length == 0;
+        } else {
+            return false;
+        }
     };
 });
