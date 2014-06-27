@@ -90,7 +90,11 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
                 && $scope.courses.hasOwnProperty(assignature)) {
             $scope.selectedCourse.code = assignature;
             $scope.selectedCourse.data = $scope.courses[assignature];
-            $scope.selectedCourse.course = null;
+            $scope.selectedCourse.course = 0;
+            if ($scope.userInscriptions[assignature] != undefined 
+                && $scope.userInscriptions[assignature].courseId != undefined) {
+                $scope.selectedCourse.course = $scope.userInscriptions[assignature].courseId;
+            }
             if ($scope.nextCourses !== undefined
                     && $scope.nextCourses.hasOwnProperty(assignature)) {
                 $scope.selectedCourse.next = $scope.nextCourses[assignature];
@@ -101,27 +105,23 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
     };
     
     $scope.register = function () {
-        if ($scope.userInscriptions.length > 9) {
+        if (Object.keys($scope.userInscriptions).length > 9) {
             alert ("No puede inscribirse a más de 10 materias por cuatrimestre!");
         } else {
-            if ($scope.selectedCourse.course != null) {
-                $scope.toggleModal ();
-                var curso = $scope.selectedCourse.data.cursos[$scope.selectedCourse.course],
-                    inscription = {
-                        "code": $scope.selectedCourse.code, 
-                        "course": curso.curso, 
-                        "horarios": curso.horarios
-                    };
-                if ($scope.userInscriptions !== undefined
-                        && $scope.userInscriptions.hasOwnProperty(inscription.code)
-                        && !confirm("Se va a cambiar la inscripción a " + inscription.code  + ",\n Desea Continuar?")) {
-                    return;
-                }
-                $scope.userInscriptions[inscription.code] = inscription;
-                
-            } else {
-                alert("Seleccione un curso a inscribirse!");
+            $scope.toggleModal ();
+            var curso = $scope.selectedCourse.data.cursos[$scope.selectedCourse.course],
+                inscription = {
+                    "code": $scope.selectedCourse.code, 
+                    "course": curso.curso, 
+                    "courseId": $scope.selectedCourse.course,
+                    "horarios": curso.horarios
+                };
+            if ($scope.userInscriptions !== undefined
+                    && $scope.userInscriptions.hasOwnProperty(inscription.code)
+                    && !confirm("Se va a cambiar la inscripción a " + inscription.code  + ",\n Desea Continuar?")) {
+                return;
             }
+            $scope.userInscriptions[inscription.code] = inscription;
         }
     };
     
@@ -224,11 +224,8 @@ systemApp.controller('SystemCtrl', function ($scope, $http, $q, $window) {
         });
         return sum;
     };
-    
+
     $scope.isEmpty = function (obj) {
-        for (var i in obj) {
-            if (obj.hasOwnProperty(i)) return false;
-        }
-        return true;
+        return Object.keys(obj).length == 0;
     };
 });
