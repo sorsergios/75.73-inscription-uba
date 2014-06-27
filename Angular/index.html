@@ -58,7 +58,7 @@
             <h3>Nota de {{selectedAssignature}}</h3>
             <div class="courses">
                 <ul class="grades">
-                    <li class="grade" ng-repeat="grade in ['MAL', 4,5,6,7,8,9,10]">
+                    <li class="grade" ng-repeat="grade in ['No_Aprobada',4,5,6,7,8,9,10]">
                         <input id="grade-{{grade}}" 
                             ng-model="user.subjects[selectedAssignature].grade"
                             ng-value="{{grade}}"
@@ -113,7 +113,7 @@
                     <div>Créditos obtenidos: {{creditsObtained()}} </div>
                     <div>Materias aprobadas: {{subjectsApproved()}} </div>
                     <div>Porcentaje aprobado:  {{creditsObtained() / 248 * 100 | number: 2}}%</div>
-                    <div>Promedio FIUBA:  {{totalGrades() / subjectsApproved() | number: 2}}%</div>
+                    <div>Promedio FIUBA:  {{totalGrades() / subjectsApproved() | number: 2}}</div>
                 </div>
                 <h4 ng-show="!isEmpty(userInscriptions)" class="centrar" >Usted está inscripto a:</h4>
                 <div ng-show="!isEmpty(userInscriptions)" class="inscripto">
